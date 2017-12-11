@@ -13,3 +13,7 @@
 .page1_link, .page2_link {
 	cursor: pointer;
 }
+
+.photo .mz-figure {
+	height: 560px;
+}
