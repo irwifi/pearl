@@ -44,12 +44,12 @@ $(() => {
 	});
 
 	$("#page1").find(".item1").click(function() {
-		$(".mz-figure img").attr("src", $(this).find("img.image").attr("src")).css({ "height": "200px", "width": "200px" });
+		$(".mz-figure img").attr("src", "statics/img/"+$(this).attr("data-image"));
 		$(".ring_price").text($(this).attr("data-price"));
 	});
 
 	$("#page1").find(".item2").click(function() {
-		$(".mz-figure img").attr("src", $(this).find("img.image").attr("src")).css({ "height": "200px", "width": "200px" });
+		$(".mz-figure img").attr("src", "statics/img/"+$(this).attr("data-image"));
 		$(".ring_price").text($(this).attr("data-price"));
 	});
 
