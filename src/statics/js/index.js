@@ -54,22 +54,22 @@ $(() => {
 	});
 
 	$("#page1").find(".item3").click(function() {
-		$(".mz-figure img").attr("src", "statics/img/" + $(this).attr("data-counter") + ".jpg").css({ "height": "400px", "width": "400px" });
+		$(".mz-figure img").attr("src", "statics/img/" + $(this).attr("data-image")).css({ "height": "400px", "width": "400px" });
 		$(".ring_price").text($(this).attr("data-price"));
 	});
 
 	$("#page2").find(".item1").click(function() {
-		$(".mz-figure img").attr("src", "statics/img/" + $(this).attr("data-counter") + ".jpg").css({ "height": "400px", "width": "400px" });
+		$(".mz-figure img").attr("src", "statics/img/" + $(this).attr("data-image")).css({ "height": "400px", "width": "400px" });
 		$(".ring_price").text($(this).attr("data-price"));
 	});
 
 	$("#page2").find(".item_style").click(function() {
-		$(".mz-figure img").attr("src", "statics/img/" + $(this).attr("data-counter") + ".jpg").css({ "height": "400px", "width": "400px" });
+		$(".mz-figure img").attr("src", "statics/img/" + $(this).attr("data-image")).css({ "height": "400px", "width": "400px" });
 		$(".ring_price").text($(this).attr("data-price"));
 	});
 
 	$("#page2").find(".item3").click(function() {
-		$(".mz-figure img").attr("src", "statics/img/" + $(this).attr("data-counter") + ".jpg").css({ "height": "400px", "width": "400px" });
+		$(".mz-figure img").attr("src", "statics/img/" + $(this).attr("data-image")).css({ "height": "400px", "width": "400px" });
 		$(".ring_price").text($(this).attr("data-price"));
 	});
 
