@@ -105,7 +105,8 @@
 							<div class="mz-hint mz-hint-hidden" style="transition-delay: 0ms;"><span class="mz-hint-message">Hover to zoom</span></div>
 						</figure>
 					</a>
-					<div class="selectors">
+
+					<div class="selectors hidden">
 						<a data-zoom-id="photo" href="statics/img/photo-ring.jpg" data-image="http://transformagency.biz/clients2/pearl/build-your-own/alt/images/products/photo-ring.jpg" class="mz-thumb-selected mz-thumb">
             <img srcset="http://transformagency.biz/clients2/pearl/build-your-own/alt/images/products/photo-ring-thumb.jpg" src="statics/img/photo-ring-thumb.jpg">
         </a>
@@ -117,334 +118,59 @@
         </a>
 					</div>
 				</div>
+
 				<div class="options">
 					<h2>Customize Your Pearl</h2>
+
 					<span class="title">Pearl Type<a href="http://transformagency.biz/clients2/pearl/build-your-own/alt/build-your-own-ring-1.php#" class="question-tip tooltip tooltipstered">?</a><!-- <span class="selected">Praesent</span> --></span>
+
 					<div class="option-list four">
-						<a class="item item1" data-price="100" data-image="9.png" onclick="javascript:jhide(&#39;colorsempty&#39;);jshow(&#39;colors&#39;);jshow(&#39;colors1&#39;);jhide(&#39;colors2&#39;);jhide(&#39;colors3&#39;);jhide(&#39;colors4&#39;);jhide(&#39;colors5&#39;);jhide(&#39;colors6&#39;);jhide(&#39;colors7&#39;);">
-                        <img src="statics/img/selected.png" alt="" class="check">
-                        <img src="statics/img/color1.png" alt="" class="image">
-                        <span class="label">Praesent</span>
-                        <span class="price-from">from $120</span>
-                    </a>
-						<a class="item item1" data-price="200" data-image="4.png" onclick="javascript:jhide(&#39;colorsempty&#39;);jshow(&#39;colors&#39;);jhide(&#39;colors1&#39;);jshow(&#39;colors2&#39;);jhide(&#39;colors3&#39;);jhide(&#39;colors4&#39;);jhide(&#39;colors5&#39;);jhide(&#39;colors6&#39;);jhide(&#39;colors7&#39;);">
-                        <img src="statics/img/selected.png" alt="" class="check">
-                        <img src="statics/img/color2.png" alt="" class="image">
-                        <span class="label">Praesent</span>
-                        <span class="price-from">from $120</span>
-                    </a>
-						<a class="item item1" data-price="300" data-image="3.png" onclick="javascript:jhide(&#39;colorsempty&#39;);jshow(&#39;colors&#39;);jhide(&#39;colors1&#39;);jhide(&#39;colors2&#39;);jshow(&#39;colors3&#39;);jhide(&#39;colors4&#39;);jhide(&#39;colors5&#39;);jhide(&#39;colors6&#39;);jhide(&#39;colors7&#39;);">
-                        <img src="statics/img/selected.png" alt="" class="check">
-                        <img src="statics/img/color3.png" alt="" class="image">
-                        <span class="label">Praesent</span>
-                        <span class="price-from">from $120</span>
-                    </a>
-						<a class="item item1" data-price="400" data-image="2.png" onclick="javascript:jhide(&#39;colorsempty&#39;);jshow(&#39;colors&#39;);jhide(&#39;colors1&#39;);jhide(&#39;colors2&#39;);jhide(&#39;colors3&#39;);jshow(&#39;colors4&#39;);jhide(&#39;colors5&#39;);jhide(&#39;colors6&#39;);jhide(&#39;colors7&#39;);">
-                        <img src="statics/img/selected.png" alt="" class="check">
-                        <img src="statics/img/color4.png" alt="" class="image">
-                        <span class="label">Praesent</span>
-                        <span class="price-from">from $120</span>
-                    </a>
-						<a class="item item1" data-price="500" data-image="7.png" onclick="javascript:jhide(&#39;colorsempty&#39;);jshow(&#39;colors&#39;);jhide(&#39;colors1&#39;);jhide(&#39;colors2&#39;);jhide(&#39;colors3&#39;);jhide(&#39;colors4&#39;);jshow(&#39;colors5&#39;);jhide(&#39;colors6&#39;);jhide(&#39;colors7&#39;);">
-                        <img src="statics/img/selected.png" alt="" class="check">
-                        <img src="statics/img/color5.png" alt="" class="image">
-                        <span class="label">Praesent</span>
-                        <span class="price-from">from $120</span>
-                    </a>
-						<a class="item item1" data-price="600" data-image="1.png" onclick="javascript:jhide(&#39;colorsempty&#39;);jshow(&#39;colors&#39;);jhide(&#39;colors1&#39;);jhide(&#39;colors2&#39;);jhide(&#39;colors3&#39;);jhide(&#39;colors4&#39;);jhide(&#39;colors5&#39;);jshow(&#39;colors6&#39;);jhide(&#39;colors7&#39;);">
-                        <img src="statics/img/selected.png" alt="" class="check">
-                        <img src="statics/img/color6.png" alt="" class="image">
-                        <span class="label">Praesent</span>
-                        <span class="price-from">from $120</span>
-                    </a>
-						<a class="item item1" data-price="700" data-image="6.png" onclick="javascript:jhide(&#39;colorsempty&#39;);jshow(&#39;colors&#39;);jhide(&#39;colors1&#39;);jhide(&#39;colors2&#39;);jhide(&#39;colors3&#39;);jhide(&#39;colors4&#39;);jhide(&#39;colors5&#39;);jhide(&#39;colors6&#39;);jshow(&#39;colors7&#39;);">
-                        <img src="statics/img/selected.png" alt="" class="check">
-                        <img src="statics/img/color7.png" alt="" class="image">
-                        <span class="label">Praesent</span>
-                        <span class="price-from">from $120</span>
-                    </a>
-						<div class="clear">
-							<!-- -->
+						<div class="wrapper_pearl_type">
+							<a class="item item1 option_pearl_type sample hidden" data-name="" data-price="" data-image="">
+								<img src="statics/img/selected.png" alt="" class="check">
+								<img src="statics/img/" alt="" class="image thumb">
+								<span class="label">Presents</span>
+								<span class="price-from">from $<span class="price_amount"></span></span>
+							</a>
 						</div>
+
+						<div class="clear"></div>
 					</div>
+
 					<span class="title">Pearl Color<a href="http://transformagency.biz/clients2/pearl/build-your-own/alt/build-your-own-ring-1.php#" class="question-tip tooltip tooltipstered">?</a><!-- <span class="selected">Praesent</span> --></span>
 					<div class="option-list" id="colorsempty">please choose a pearl type first</div>
+
 					<div id="colors" style="display:none">
-						<div class="option-list four" id="colors1" style="display:none">
-							<a class="item item2" data-price="800" data-image="9.png">
-                        <img src="statics/img/selected.png" alt="" class="check">
-                        <img src="statics/img/color1.png" alt="" class="image">
-                        <span class="label">Praesent</span>
-                        <span class="price-from">from $120</span>
-                    </a>
-							<a class="item item2" data-price="900" data-image="3.png">
-                        <img src="statics/img/selected.png" alt="" class="check">
-                        <img src="statics/img/color3.png" alt="" class="image">
-                        <span class="label">Praesent</span>
-                        <span class="price-from">from $120</span>
-                    </a>
-							<a class="item item2" data-price="1000" data-image="2.png">
-                        <img src="statics/img/selected.png" alt="" class="check">
-                        <img src="statics/img/color4.png" alt="" class="image">
-                        <span class="label">Praesent</span>
-                        <span class="price-from">from $120</span>
-                    </a>
-							<a class="item item2" data-price="1100" data-image="7.png">
-                        <img src="statics/img/selected.png" alt="" class="check">
-                        <img src="statics/img/color5.png" alt="" class="image">
-                        <span class="label">Praesent</span>
-                        <span class="price-from">from $120</span>
-                    </a>
-							<a class="item item2" data-price="1110" data-image="1.png">
-                        <img src="statics/img/selected.png" alt="" class="check">
-                        <img src="statics/img/color6.png" alt="" class="image">
-                        <span class="label">Praesent</span>
-                        <span class="price-from">from $120</span>
-                    </a>
-							<a class="item item2" data-price="1120" data-image="6.png">
-                        <img src="statics/img/selected.png" alt="" class="check">
-                        <img src="statics/img/color7.png" alt="" class="image">
-                        <span class="label">Praesent</span>
-                        <span class="price-from">from $120</span>
-                    </a>
-							<div class="clear">
-								<!-- -->
-							</div>
+						<div class="wrapper_pearl_color option-list four">
+							<a class="item item2 option_pearl_color sample hidden" data-name="" data-type="" data-price="" data-image="">
+								<img src="statics/img/selected.png" alt="" class="check">
+								<img src="statics/img/" alt="" class="image thumb">
+								<span class="label">Presents</span>
+								<span class="price-from">from $<span class="price_amount"></span></span>
+							</a>
 						</div>
-						<div class="option-list four" id="colors2" style="display:none">
-							<a class="item item2" data-price="1130" data-image="3.png">
-                        <img src="statics/img/selected.png" alt="" class="check">
-                        <img src="statics/img/color3.png" alt="" class="image">
-                        <span class="label">Praesent</span>
-                        <span class="price-from">from $120</span>
-                    </a>
-							<a class="item item2" data-price="1140" data-image="2.png">
-                        <img src="statics/img/selected.png" alt="" class="check">
-                        <img src="statics/img/color4.png" alt="" class="image">
-                        <span class="label">Praesent</span>
-                        <span class="price-from">from $120</span>
-                    </a>
-							<a class="item item2" data-price="1150" data-image="7.png">
-                        <img src="statics/img/selected.png" alt="" class="check">
-                        <img src="statics/img/color5.png" alt="" class="image">
-                        <span class="label">Praesent</span>
-                        <span class="price-from">from $120</span>
-                    </a>
-							<a class="item item2" data-price="1160" data-image="1.png">
-                        <img src="statics/img/selected.png" alt="" class="check">
-                        <img src="statics/img/color6.png" alt="" class="image">
-                        <span class="label">Praesent</span>
-                        <span class="price-from">from $120</span>
-                    </a>
-							<div class="clear">
-								<!-- -->
-							</div>
-						</div>
-						<div class="option-list four" id="colors3" style="display:none">
-							<a class="item item2" data-price="1170" data-image="9.png">
-                        <img src="statics/img/selected.png" alt="" class="check">
-                        <img src="statics/img/color1.png" alt="" class="image">
-                        <span class="label">Praesent</span>
-                        <span class="price-from">from $120</span>
-                    </a>
-							<a class="item item2" data-price="1180" data-image="4.png">
-                        <img src="statics/img/selected.png" alt="" class="check">
-                        <img src="statics/img/color2.png" alt="" class="image">
-                        <span class="label">Praesent</span>
-                        <span class="price-from">from $120</span>
-                    </a>
-							<a class="item item2" data-price="1190" data-image="3.png">
-                        <img src="statics/img/selected.png" alt="" class="check">
-                        <img src="statics/img/color3.png" alt="" class="image">
-                        <span class="label">Praesent</span>
-                        <span class="price-from">from $120</span>
-                    </a>
-							<div class="clear">
-								<!-- -->
-							</div>
-						</div>
-						<div class="option-list four" id="colors4" style="display:none">
-							<a class="item item2" data-price="1200" data-image="9.png">
-                        <img src="statics/img/selected.png" alt="" class="check">
-                        <img src="statics/img/color1.png" alt="" class="image">
-                        <span class="label">Praesent</span>
-                        <span class="price-from">from $120</span>
-                    </a>
-							<a class="item item2" data-price="1210" data-image="4.png">
-                        <img src="statics/img/selected.png" alt="" class="check">
-                        <img src="statics/img/color2.png" alt="" class="image">
-                        <span class="label">Praesent</span>
-                        <span class="price-from">from $120</span>
-                    </a>
-							<a class="item item2" data-price="1220" data-image="3.png">
-                        <img src="statics/img/selected.png" alt="" class="check">
-                        <img src="statics/img/color3.png" alt="" class="image">
-                        <span class="label">Praesent</span>
-                        <span class="price-from">from $120</span>
-                    </a>
-							<a class="item item2" data-price="1230" data-image="2.png">
-                        <img src="statics/img/selected.png" alt="" class="check">
-                        <img src="statics/img/color4.png" alt="" class="image">
-                        <span class="label">Praesent</span>
-                        <span class="price-from">from $120</span>
-                    </a>
-							<div class="clear">
-								<!-- -->
-							</div>
-						</div>
-						<div class="option-list four" id="colors5" style="display:none">
-							<a class="item item2" data-price="1240" data-image="9.png">
-                        <img src="statics/img/selected.png" alt="" class="check">
-                        <img src="statics/img/color1.png" alt="" class="image">
-                        <span class="label">Praesent</span>
-                        <span class="price-from">from $120</span>
-                    </a>
-							<a class="item item2" data-price="1250" data-image="4.png">
-                        <img src="statics/img/selected.png" alt="" class="check">
-                        <img src="statics/img/color2.png" alt="" class="image">
-                        <span class="label">Praesent</span>
-                        <span class="price-from">from $120</span>
-                    </a>
-							<a class="item item2" data-price="1260" data-image="3.png">
-                        <img src="statics/img/selected.png" alt="" class="check">
-                        <img src="statics/img/color3.png" alt="" class="image">
-                        <span class="label">Praesent</span>
-                        <span class="price-from">from $120</span>
-                    </a>
-							<a class="item item2" data-price="1270" data-image="2.png">
-                        <img src="statics/img/selected.png" alt="" class="check">
-                        <img src="statics/img/color4.png" alt="" class="image">
-                        <span class="label">Praesent</span>
-                        <span class="price-from">from $120</span>
-                    </a>
-							<a class="item item2" data-price="1280" data-image="7.png">
-                        <img src="statics/img/selected.png" alt="" class="check">
-                        <img src="statics/img/color5.png" alt="" class="image">
-                        <span class="label">Praesent</span>
-                        <span class="price-from">from $120</span>
-                    </a>
-							<a class="item item2" data-price="1290" data-image="1.png">
-                        <img src="statics/img/selected.png" alt="" class="check">
-                        <img src="statics/img/color6.png" alt="" class="image">
-                        <span class="label">Praesent</span>
-                        <span class="price-from">from $120</span>
-                    </a>
-							<a class="item item2" data-price="1300" data-image="6.png">
-                        <img src="statics/img/selected.png" alt="" class="check">
-                        <img src="statics/img/color7.png" alt="" class="image">
-                        <span class="label">Praesent</span>
-                        <span class="price-from">from $120</span>
-                    </a>
-							<div class="clear">
-								<!-- -->
-							</div>
-						</div>
-						<div class="option-list four" id="colors6" style="display:none">
-							<a class="item item2" data-price="1310" data-image="4.png">
-                        <img src="statics/img/selected.png" alt="" class="check">
-                        <img src="statics/img/color2.png" alt="" class="image">
-                        <span class="label">Praesent</span>
-                        <span class="price-from">from $120</span>
-                    </a>
-							<a class="item item2" data-price="1320" data-image="3.png">
-                        <img src="statics/img/selected.png" alt="" class="check">
-                        <img src="statics/img/color3.png" alt="" class="image">
-                        <span class="label">Praesent</span>
-                        <span class="price-from">from $120</span>
-                    </a>
-							<a class="item item2" data-price="1330" data-image="2.png">
-                        <img src="statics/img/selected.png" alt="" class="check">
-                        <img src="statics/img/color4.png" alt="" class="image">
-                        <span class="label">Praesent</span>
-                        <span class="price-from">from $120</span>
-                    </a>
-							<a class="item item2" data-price="1340" data-image="7.png">
-                        <img src="statics/img/selected.png" alt="" class="check">
-                        <img src="statics/img/color5.png" alt="" class="image">
-                        <span class="label">Praesent</span>
-                        <span class="price-from">from $120</span>
-                    </a>
-							<a class="item item2" data-price="1350" data-image="1.png">
-                        <img src="statics/img/selected.png" alt="" class="check">
-                        <img src="statics/img/color6.png" alt="" class="image">
-                        <span class="label">Praesent</span>
-                        <span class="price-from">from $120</span>
-                    </a>
-							<a class="item item2" data-price="1360" data-image="6.png">
-                        <img src="statics/img/selected.png" alt="" class="check">
-                        <img src="statics/img/color7.png" alt="" class="image">
-                        <span class="label">Praesent</span>
-                        <span class="price-from">from $120</span>
-                    </a>
-							<div class="clear">
-								<!-- -->
-							</div>
-						</div>
-						<div class="option-list four" id="colors7" style="display:none">
-							<a class="item item2" data-price="1370" data-image="9.png">
-                        <img src="statics/img/selected.png" alt="" class="check">
-                        <img src="statics/img/color1.png" alt="" class="image">
-                        <span class="label">Praesent</span>
-                        <span class="price-from">from $120</span>
-                    </a>
-							<a class="item item2" data-price="1380" data-image="4.png">
-                        <img src="statics/img/selected.png" alt="" class="check">
-                        <img src="statics/img/color2.png" alt="" class="image">
-                        <span class="label">Praesent</span>
-                        <span class="price-from">from $120</span>
-                    </a>
-							<a class="item item2" data-price="1390" data-image="3.png">
-                        <img src="statics/img/selected.png" alt="" class="check">
-                        <img src="statics/img/color3.png" alt="" class="image">
-                        <span class="label">Praesent</span>
-                        <span class="price-from">from $120</span>
-                    </a>
-							<a class="item item2" data-price="1400" data-image="2.png">
-                        <img src="statics/img/selected.png" alt="" class="check">
-                        <img src="statics/img/color4.png" alt="" class="image">
-                        <span class="label">Praesent</span>
-                        <span class="price-from">from $120</span>
-                    </a>
-							<a class="item item2" data-price="1410" data-image="7.png">
-                        <img src="statics/img/selected.png" alt="" class="check">
-                        <img src="statics/img/color5.png" alt="" class="image">
-                        <span class="label">Praesent</span>
-                        <span class="price-from">from $120</span>
-                    </a>
-							<a class="item item2" data-price="1420" data-image="1.png">
-                        <img src="statics/img/selected.png" alt="" class="check">
-                        <img src="statics/img/color6.png" alt="" class="image">
-                        <span class="label">Praesent</span>
-                        <span class="price-from">from $120</span>
-                    </a>
-							<a class="item item2" data-price="1430" data-image="6.png">
-                        <img src="statics/img/selected.png" alt="" class="check">
-                        <img src="statics/img/color7.png" alt="" class="image">
-                        <span class="label">Praesent</span>
-                        <span class="price-from">from $120</span>
-                    </a>
-							<div class="clear">
-								<!-- -->
-							</div>
-						</div>
+
+						<div class="clear"></div>
 					</div>
+
 					<span class="title">Pearl Size<a href="http://transformagency.biz/clients2/pearl/build-your-own/alt/build-your-own-ring-1.php#" class="question-tip tooltip tooltipstered">?</a><!-- <span class="selected">Praesent</span> --></span>
+
 					<div class="option-list three">
-						<a class="item item3" data-image="1649-F-RG-D-A.png" data-price="1440">
+						<a class="item item3" data-size="300" data-price="1440">
                         <img src="statics/img/selected.png" alt="" class="check">
-                        <img src="statics/img/pearlsize1.png" alt="" class="image">
+                        <img src="statics/img/pearlsize1.png" alt="" class="image pearlsize1">
                         <span class="label">6mm</span>
                         <span class="price-from">from $120</span>
                     </a>
-						<a class="item item3" data-image="1649-F-RG-D-DG.png" data-price="1450">
+						<a class="item item3" data-size="310" data-price="1450">
                         <img src="statics/img/selected.png" alt="" class="check">
-                        <img src="statics/img/pearlsize2.png" alt="" class="image">
+                        <img src="statics/img/pearlsize2.png" alt="" class="image  pearlsize2">
                         <span class="label">7mm</span>
                         <span class="price-from">from $120</span>
                     </a>
-						<a class="item item3" data-image="1649-F-RG-D-R.png" data-price="1460">
+						<a class="item item3" data-size="320" data-price="1460">
                         <img src="statics/img/selected.png" alt="" class="check">
-                        <img src="statics/img/pearlsize3.png" alt="" class="image">
+                        <img src="statics/img/pearlsize3.png" alt="" class="image  pearlsize3">
                         <span class="label">8mm</span>
                         <span class="price-from">from $120</span>
                     </a>
@@ -452,7 +178,9 @@
 							<!-- -->
 						</div>
 					</div>
+
 					<span class="title">Pearl Quality<a href="http://transformagency.biz/clients2/pearl/build-your-own/alt/build-your-own-ring-1.php#" class="question-tip tooltip tooltipstered">?</a><!-- <span class="selected">Praesent</span> --></span>
+
 					<div class="option-list three">
 						<a class="item item4">
                         <img src="statics/img/selected.png" alt="" class="check">
@@ -473,6 +201,7 @@
 							<!-- -->
 						</div>
 					</div>
+
 					<div class="actions">
 						<span class="build-price">Price: $<span class="ring_price">00</span></span>
 						<a class="btn btn-action" id="page1_submit"><span>Next: Customize Your Setting</span></a>
@@ -575,7 +304,7 @@
 					<div id="style1" style="display:none">
 						<span class="title">Lipsum Style<a href="http://transformagency.biz/clients2/pearl/build-your-own/alt/build-your-own-ring-2.php#" class="question-tip tooltip tooltipstered">?</a><!-- <span class="selected">Praesent</span> --></span>
 						<div class="option-list three">
-							 <a class="item item8a" data-image="1649-F-RG-D-A.png" data-price="1510">
+							<a class="item item8a" data-image="1649-F-RG-D-A.png" data-price="1510">
                             <img src="statics/img/selected.png" alt="" class="check">
                             <img src="statics/img/option-ring-style.png" alt="" class="image">
                             <span class="label">Vestibulum</span>

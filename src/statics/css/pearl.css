@@ -487,7 +487,7 @@ header .menu ul li a:hover {
 }
 .build-your-own .build-content .photo {
   float: left;
-  width: 560px;
+  width: 440px;
   border: 1px solid #e7e7e7;
   text-align: center;
   padding-bottom: 40px;
@@ -702,7 +702,7 @@ header .menu ul li a:hover {
   margin-right: -8px;
 }
 .option-list a.item {
-  display: block;
+  /* display: block; */
   float: left;
   border: 1px solid #c3c3c3;
   text-align: center;
@@ -731,6 +731,7 @@ header .menu ul li a:hover {
 }
 .option-list a.item .image {
   margin: 0px 0px 0px 0px;
+  max-height: 38px;
 }
 .option-list a.item .label {
   display: block;
@@ -759,6 +760,7 @@ header .menu ul li a:hover {
 }
 .option-list.four a.item {
   width: 119px;
+  height: 95px;
 }
 .option-list a.item.metal {
   padding: 0px 0px;
@@ -1015,4 +1017,8 @@ footer .copyright a {
   /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fbf7f3', endColorstr='#ece4db', GradientType=1);
   /* IE6-9 fallback on horizontal gradient */
+}
+
+.wrapper_pearl_color {
+  height: 100px;
 }

@@ -3,6 +3,10 @@
     margin: 0;
     padding: 0;
   }
+
+  .hidden {
+  	display: none;
+  }
 /* Global ====================================== END */
 
 #page2, #page3 {
@@ -16,4 +20,27 @@
 
 .photo .mz-figure {
 	height: 560px;
+}
+
+.pearlsize1 {
+	height: 22px;
+	margin-top:  4px !important;
+	margin-bottom: 4px !important;
+}
+
+.pearlsize2 {
+	height: 26px;
+	margin-top:  2px !important;
+	margin-bottom: 2px !important;
+}
+
+.pearlsize3 {
+	height: 30px;
+	margin-top:  0px;
+	margin-bottom: 0px;
+}
+
+.photo {
+	height: 470px;
+	padding: 60px;
 }
