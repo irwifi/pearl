@@ -15,7 +15,8 @@ $(() => {
 			{"name": "white", "type": "white", "thumb": "pearl_color/white_thumb.png", "image": "pearl_color/white.png", "price": 120},
 			{"name": "silver", "type": "white", "thumb": "pearl_color/silver_thumb.png", "image": "pearl_color/silver.png", "price": 120}
 		], "setting_style": [
-			{"name": "style1", "thumb": "setting_style/style1.png"}
+			{"name": "setting_small", "thumb": "setting_style/setting_small_thumb.png", "image": "setting_style/setting_small.png", "price": 320},
+			{"name": "setting_big", "thumb": "setting_style/setting_big_thumb.png", "image": "setting_style/setting_big.png", "price": 120}
 		], "lipsum_style": [
 		], "metal_type": [
 		]}
@@ -46,22 +47,32 @@ $(() => {
 		$("#page1").show();
 		$("#page2").hide();
 		$("#page3").hide();
+		$(".build-steps .step.first").removeClass("inactive").addClass("active");
+		$(".build-steps .step.second").removeClass("active").addClass("inactive");
+		$(".build-steps .step.last").removeClass("active").addClass("inactive");
 	});
 
 	$(".page2_link").on("click", () => {
 		$("#page2").show();
 		$("#page3").hide();
+		$(".build-steps .step.first").removeClass("active inactive");
+		$(".build-steps .step.second").removeClass("inactive").addClass("active");
+		$(".build-steps .step.last").removeClass("active").addClass("inactive");
 	});
 
 	$("#page1_submit").on("click", () => {
 		$("#page1").hide();
 		$("#page2").show();
+		$(".build-steps .step.first").removeClass("active");
+		$(".build-steps .step.second").removeClass("inactive").addClass("active");
 		$('html, body').animate({ scrollTop: $("#page2").offset().top }, 100);
 	});
 
 	$("#page2_submit").on("click", () => {
 		$("#page2").hide();
 		$("#page3").show();
+		$(".build-steps .step.second").removeClass("active");
+		$(".build-steps .step.last").removeClass("inactive").addClass("active");
 		$('html, body').animate({ scrollTop: $("#page3").offset().top }, 100);
 	});
 
@@ -87,34 +98,35 @@ $(() => {
 	});
 
 	$("#page1").find(".item1").click(function() {
-		$(".mz-figure img").attr("src", "statics/img/"+$(this).attr("data-image"));
+		$("#zoom_01").attr({"src": "statics/img/"+$(this).attr("data-image"), "data-zoom-image": "statics/img/"+$(this).attr("data-image")});
+		$(".zoomContainer").hide(); //css({"background-image": "url('statics/img/" + $(this).attr("data-image") + "'')"});
 		$(".ring_price").text($(this).attr("data-price"));
 		$(".option_pearl_color").hide();
 		$(".option_pearl_color[data-type='"+$(this).attr("data-name")+"']").show();
 	});
 
 	$("#page1").find(".item2").click(function() {
-		$(".mz-figure img").attr("src", "statics/img/"+$(this).attr("data-image"));
+		$("#zoom_01").attr({"src": "statics/img/"+$(this).attr("data-image"), "data-zoom-image": "statics/img/"+$(this).attr("data-image")});
 		$(".ring_price").text($(this).attr("data-price"));
 	});
 
 	$("#page1").find(".item3").click(function() {
-		$(".mz-figure img").css({ "height": $(this).attr("data-size")+"px" });
+		// $("#zoom_01").css({ "height": $(this).attr("data-size")+"px" });
 		$(".ring_price").text($(this).attr("data-price"));
 	});
 
 	$("#page2").find(".item1").click(function() {
-		$(".mz-figure img").attr("src", "statics/img/" + $(this).attr("data-image")).css({ "height": "400px", "width": "400px" });
+		$("#zoom_01").attr({"src": "statics/img/"+$(this).attr("data-image"), "data-zoom-image": "statics/img/"+$(this).attr("data-image")}).css({ "height": "400px", "width": "400px" });
 		$(".ring_price").text($(this).attr("data-price"));
 	});
 
 	$("#page2").find(".item_style").click(function() {
-		$(".mz-figure img").attr("src", "statics/img/" + $(this).attr("data-image")).css({ "height": "400px", "width": "400px" });
+		$("#zoom_01").attr({"src": "statics/img/"+$(this).attr("data-image"), "data-zoom-image": "statics/img/"+$(this).attr("data-image")}).css({ "height": "400px", "width": "400px" });
 		$(".ring_price").text($(this).attr("data-price"));
 	});
 
 	$("#page2").find(".item3").click(function() {
-		$(".mz-figure img").attr("src", "statics/img/" + $(this).attr("data-image")).css({ "height": "400px", "width": "400px" });
+		$("#zoom_01").attr({"src": "statics/img/"+$(this).attr("data-image"), "data-zoom-image": "statics/img/"+$(this).attr("data-image")}).css({ "height": "400px", "width": "400px" });
 		$(".ring_price").text($(this).attr("data-price"));
 	});
 
