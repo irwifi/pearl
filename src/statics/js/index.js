@@ -38,10 +38,10 @@ $(() => {
 			{"name": "setting_small", "label": "Small Setting", "image": "ring_style/setting_small.png", "price": 320},
 			{"name": "setting_big", "label": "Big Setting", "image": "ring_style/setting_big.png", "price": 120}
 		], "ring_substyle": [
-			{"name": "sub_level1", "type": "setting_small", "label": "Sub Leve 1", "image": "ring_substyle/base1_white.png", "price": 120},
-			{"name": "sub_level2", "type": "setting_small", "label": "Sub Leve 2", "image": "ring_substyle/base4_white.png", "price": 120},
-			{"name": "sub_level3", "type": "setting_big", "label": "Sub Leve 3", "image": "ring_substyle/base3_white.png", "price": 120},
-			{"name": "sub_level4", "type": "setting_big", "label": "Sub Leve 4", "image": "ring_substyle/base2_white.png", "price": 120}
+			{"name": "sub_level1", "type": "setting_small", "label": "Sub Leve 1", "image": "ring_substyle/base1_white.png", "ring_base": "ring_base/base1.png", "price": 120},
+			{"name": "sub_level2", "type": "setting_small", "label": "Sub Leve 2", "image": "ring_substyle/base4_white.png", "ring_base": "ring_base/base4.png", "price": 120},
+			{"name": "sub_level3", "type": "setting_big", "label": "Sub Leve 3", "image": "ring_substyle/base3_white.png", "ring_base": "ring_base/base3.png", "price": 120},
+			{"name": "sub_level4", "type": "setting_big", "label": "Sub Leve 4", "image": "ring_substyle/base2_white.png", "ring_base": "ring_base/base2.png", "price": 120}
 		], "ring_metal": [
 		]}
 
@@ -49,7 +49,6 @@ $(() => {
 		load_pearl_color(data.pearl_color);
 		load_ring_style(data.ring_style);
 		load_ring_substyle(data.ring_substyle);
-		// load_ring_metal(data.ring_metal);
 
 		function load_pearl_type(pearl_type) {
 			for(item in pearl_type) {
@@ -82,17 +81,12 @@ $(() => {
 		function load_ring_substyle(ring_substyle) {
 			for(item in ring_substyle) {
 				$(".option_ring_substyle.sample").clone().addClass("new").removeClass("sample hidden").appendTo(".wrapper_ring_substyle");
-				$(".option_ring_substyle.new").attr({"data-name": ring_substyle[item].name, "data-type": ring_substyle[item].type, "data-image": ring_substyle[item].image}).find(".price_amount").text(ring_substyle[item].price);
+				$(".option_ring_substyle.new").attr({"data-name": ring_substyle[item].name, "data-type": ring_substyle[item].type, "data-image": ring_substyle[item].image, "data-ringbase": ring_substyle[item].ring_base}).find(".price_amount").text(ring_substyle[item].price);
 				$(".option_ring_substyle.new").find(".label").text(ring_substyle[item].label);
 				$(".option_ring_substyle.new").find(".image.thumb.ring").attr("src", "statics/img/" + ring_substyle[item].image);
 				$(".option_ring_substyle.new").removeClass("new")
 			}
 		}
-
-		// function load_ring_metal(ring_metal) {
-		// 	for(item in ring_metal) {
-		// 	}
-		// }
 
 		$(".item").click(function() {
 			$(this).parent().find(".item").removeClass('selected');
@@ -125,8 +119,19 @@ $(() => {
 		});
 
 		$(".option_ring_substyle").on("click", function() {
-			$("#ring_base").attr({"src": $(this).find(".image.ring").attr("src")}).removeClass("hidden");
+			var ring_name = $(this).attr("data-ringbase").split(".");
+			$("#ring_base").attr({"src":  "statics/img/"+ring_name[0]+"_"+$(".wrapper_ring_metal").attr("data-metal")+"."+ring_name[1]}).removeClass("hidden");
 			$(".ring_price").text($(this).attr("data-price"));
+			$(".wrapper_ring_substyle").attr({"data-ringbase": $(this).attr("data-ringbase")});
+		});
+
+		$(".option_ring_metal").on("click", function() {
+			var ring_name = $(".wrapper_ring_substyle").attr("data-ringbase").split(".");
+			if(ring_name.length > 1) {
+				$("#ring_base").attr({"src": "statics/img/"+ring_name[0]+"_"+$(this).attr("data-metal")+"."+ring_name[1]}).removeClass("hidden");
+				$(".ring_price").text($(this).attr("data-price"));
+			}
+			$(".wrapper_ring_metal").attr({"data-metal": $(this).attr("data-metal")});
 		});
 
 		setTimeout(() => {
@@ -164,7 +169,7 @@ $(() => {
 		var pearl_thumb = $(".photo #pearl").attr("src");
 		$(".wrapper_ring_style .image.thumb.pearl").attr({"src": pearl_thumb});
 		$(".wrapper_ring_substyle .image.thumb.pearl").attr({"src": pearl_thumb});
-		if($(".photo #ring").attr("src") != "") {
+		if($(".photo #ring_base").attr("src") != "") {
 			$(".photo #ring_base").removeClass("hidden");
 		}
 	});
