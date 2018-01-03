@@ -45,7 +45,20 @@
 	padding: 60px;
 }
 
-#zoom_01 {
-	max-width: 300px;
-	max-height: 600px;
+.photo img {
+	position: absolute;
+	max-width: 430px;
+	max-height: 430px;
+	margin-left:  -215px;
+}
+
+.wrapper_ring_style .ring_image, .wrapper_ring_substyle .ring_image {
+	height: 110px;
+}
+
+.option-list .wrapper_ring_style a.item  .image.thumb, .option-list .wrapper_ring_substyle a.item  .image.thumb {
+	position:  absolute;
+	max-width:  120px;
+	max-height: 120px;
+	margin-left:  -58px;
 }
