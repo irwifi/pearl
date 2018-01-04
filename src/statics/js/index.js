@@ -102,8 +102,9 @@ $(() => {
 		});
 
 		$(".option_pearl_color").on("click", function() {
-			$("#pearl").attr({"src": "statics/img/"+$(this).attr("data-image")});
+			$("#pearl").attr({"src": "statics/img/" + $(this).attr("data-image"), 'data-zoom-image': 'statics/img/' + $(this).attr("data-image")});
 			$(".ring_price").text($(this).find(".price_amount").text());
+			zoomReset();
 		});
 
 		$(".option_pearl_size").on("click", function() {
@@ -123,6 +124,7 @@ $(() => {
 			$("#ring_base").attr({"src":  "statics/img/"+ring_name[0]+"_"+$(".wrapper_ring_metal").attr("data-metal")+"."+ring_name[1]}).removeClass("hidden");
 			$(".ring_price").text($(this).find(".price_amount").text());
 			$(".wrapper_ring_substyle").attr({"data-ringbase": $(this).attr("data-ringbase")});
+			zoomReset();
 		});
 
 		$(".option_ring_metal").on("click", function() {
@@ -130,6 +132,7 @@ $(() => {
 			if(ring_name.length > 1) {
 				$("#ring_base").attr({"src": "statics/img/"+ring_name[0]+"_"+$(this).attr("data-metal")+"."+ring_name[1]}).removeClass("hidden");
 				$(".ring_price").text($(this).find(".price_amount").text());
+				zoomReset();
 			}
 			$(".wrapper_ring_metal").attr({"data-metal": $(this).attr("data-metal")});
 		});
@@ -140,7 +143,6 @@ $(() => {
 		}, 100);
 	// });
 
-
 	$(".page1_link").on("click", () => {
 		$("#page1").show();
 		$("#page2").hide();
@@ -149,6 +151,7 @@ $(() => {
 		$(".build-steps .step.second").removeClass("active").addClass("inactive");
 		$(".build-steps .step.last").removeClass("active").addClass("inactive");
 		$(".photo #ring_base").addClass('hidden');
+		$(".zoomContainer .zoom_ring_image").addClass('hidden');
 	});
 
 	$(".page2_link").on("click", () => {
@@ -171,6 +174,7 @@ $(() => {
 		$(".wrapper_ring_substyle .image.thumb.pearl").attr({"src": pearl_thumb});
 		if($(".photo #ring_base").attr("src") != "") {
 			$(".photo #ring_base").removeClass("hidden");
+			$(".zoomContainer .zoom_ring_image").removeClass('hidden');
 		}
 	});
 
@@ -182,24 +186,41 @@ $(() => {
 		$('html, body').animate({ scrollTop: $("#page3").offset().top }, 100);
 	});
 
-	$('.photo #pearl').elevateZoom({
-		zoomWindowWidth: 565,
-		zoomWindowHeight: 565,
-		zoomWindowOffetx: 70,
-		zoomWindowOffety: -31
-	});
+	$('.lightBox-link').simpleLightbox({showCounter:  true, widthRatio:  0.98, heightRatio: 0.98, loop: false});
 
-	$('.photo').simpleLightbox({showCounter:  true, widthRatio:  0.98, heightRatio: 0.98, loop: false});
-
-	$('.photo').on('shown.simplelightbox', function () {
-		var perl = $('.preview-perl').attr('src');
-		var ring = $('.preview-ring').attr('src');
+	$('.lightBox-link').on('shown.simplelightbox', function () {
+		var pearl = $('#pearl').attr('src');
+		var ring = $('#ring_base').attr('src');
 		var width = $('.simple-lightbox .sl-image img').width();
-		var style = $('.set-style .selected .label').text();
-		var metal = $('.set-metal .selected .label').text().toLowerCase();
-		var color = perl_color = $('#page1 .set-pearl-color .selected').data('name').toLowerCase();
+		var style = $('.option_ring_substyle.selected .label').text();
+		var metal = $('.option_ring_metal.selected .label').text().toLowerCase();
+		var color = $('.option_pearl_color.selected').attr('data-name').toLowerCase();
 		$('.simple-lightbox .sl-image img').css('border', '1px solid #000');
 		$('.simple-lightbox .sl-image div').text(style+' ring of '+metal+' with '+color+' perl');
-		$('.simple-lightbox .sl-image').append('<img src="'+perl+'" style="width:'+width+'px;"><img src="'+ring+'" style="width:'+width+'px;">');
+		$('.simple-lightbox .sl-image .ring_image_set').remove();
+		$('.simple-lightbox .sl-image').append('<img src="'+pearl+'" style="width:'+width+'px;" class="ring_image_set">');
+		if($('#ring_base').hasClass("hidden") === false) {
+			$('.simple-lightbox .sl-image').append('<img src="'+ring+'" style="width:'+width+'px;" class="ring_image_set">');
+		}
 	});
+
+	function zoomReset() {
+		$('.zoomContainer').remove();
+		$('.photo #pearl').removeData('elevateZoom');
+
+		$('.photo #pearl').elevateZoom({
+			zoomWindowWidth: 565,
+			zoomWindowHeight: 565,
+			zoomWindowOffetx: 70,
+			zoomWindowOffety: -31
+		});
+	}
 });
+
+function getUrlRing(){
+	var base = String($('.option_ring_substyle.selected').attr('data-ringbase'));
+	var color = $('.option_ring_metal.selected').attr('data-metal');
+	if (typeof color == "undefined")  var color = 'white';
+	var url = 'statics/img/' + base.substr(0, 15) + '_' + color + base.substr(15);
+	return url;
+}
