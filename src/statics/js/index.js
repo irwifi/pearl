@@ -25,23 +25,23 @@ $(() => {
 			{"name": "gold", "thumb": "pearl_type/gold_thumb.png", "price": 200},
 			{"name": "white", "thumb": "pearl_type/white_thumb.png", "price": 300}
 		], "pearl_color": [
-			{"name": "black", "type": "black", "thumb": "pearl_color/black_thumb.png", "image": "pearl_color/black.png", "price": 120},
+			{"name": "black", "type": "black", "thumb": "pearl_color/black_thumb.png", "image": "pearl_color/black.png", "price": 110},
 			{"name": "blue", "type": "black", "thumb": "pearl_color/blue_thumb.png", "image": "pearl_color/blue.png", "price": 120},
-			{"name": "green", "type": "black", "thumb": "pearl_color/green_thumb.png", "image": "pearl_color/green.png", "price": 120},
-			{"name": "green_light", "type": "black", "thumb": "pearl_color/green_light_thumb.png", "image": "pearl_color/green_light.png", "price": 120},
-			{"name": "gold", "type": "gold", "thumb": "pearl_color/gold_thumb.png", "image": "pearl_color/gold.png", "price": 120},
-			{"name": "gold_light", "type": "gold", "thumb": "pearl_color/gold_light_thumb.png", "image": "pearl_color/gold_light.png", "price": 120},
-			{"name": "pink", "type": "white", "thumb": "pearl_color/pink_thumb.png", "image": "pearl_color/pink.png", "price": 120},
-			{"name": "white", "type": "white", "thumb": "pearl_color/white_thumb.png", "image": "pearl_color/white.png", "price": 120},
-			{"name": "silver", "type": "white", "thumb": "pearl_color/silver_thumb.png", "image": "pearl_color/silver.png", "price": 120}
+			{"name": "green", "type": "black", "thumb": "pearl_color/green_thumb.png", "image": "pearl_color/green.png", "price": 130},
+			{"name": "green_light", "type": "black", "thumb": "pearl_color/green_light_thumb.png", "image": "pearl_color/green_light.png", "price": 140},
+			{"name": "gold", "type": "gold", "thumb": "pearl_color/gold_thumb.png", "image": "pearl_color/gold.png", "price": 150},
+			{"name": "gold_light", "type": "gold", "thumb": "pearl_color/gold_light_thumb.png", "image": "pearl_color/gold_light.png", "price": 160},
+			{"name": "pink", "type": "white", "thumb": "pearl_color/pink_thumb.png", "image": "pearl_color/pink.png", "price": 170},
+			{"name": "white", "type": "white", "thumb": "pearl_color/white_thumb.png", "image": "pearl_color/white.png", "price": 180},
+			{"name": "silver", "type": "white", "thumb": "pearl_color/silver_thumb.png", "image": "pearl_color/silver.png", "price": 190}
 		], "ring_style": [
-			{"name": "setting_small", "label": "Small Setting", "image": "ring_style/setting_small.png", "price": 320},
-			{"name": "setting_big", "label": "Big Setting", "image": "ring_style/setting_big.png", "price": 120}
+			{"name": "setting_small", "label": "Small Setting", "image": "ring_style/setting_small.png", "price": 400},
+			{"name": "setting_big", "label": "Big Setting", "image": "ring_style/setting_big.png", "price": 500}
 		], "ring_substyle": [
-			{"name": "sub_level1", "type": "setting_small", "label": "Sub Leve 1", "image": "ring_substyle/base1_white.png", "ring_base": "ring_base/base1.png", "price": 120},
-			{"name": "sub_level2", "type": "setting_small", "label": "Sub Leve 2", "image": "ring_substyle/base4_white.png", "ring_base": "ring_base/base4.png", "price": 120},
-			{"name": "sub_level3", "type": "setting_big", "label": "Sub Leve 3", "image": "ring_substyle/base3_white.png", "ring_base": "ring_base/base3.png", "price": 120},
-			{"name": "sub_level4", "type": "setting_big", "label": "Sub Leve 4", "image": "ring_substyle/base2_white.png", "ring_base": "ring_base/base2.png", "price": 120}
+			{"name": "sub_level1", "type": "setting_small", "label": "Sub Leve 1", "image": "ring_substyle/base1_white.png", "ring_base": "ring_base/base1.png", "price": 220},
+			{"name": "sub_level2", "type": "setting_small", "label": "Sub Leve 2", "image": "ring_substyle/base4_white.png", "ring_base": "ring_base/base4.png", "price": 240},
+			{"name": "sub_level3", "type": "setting_big", "label": "Sub Leve 3", "image": "ring_substyle/base3_white.png", "ring_base": "ring_base/base3.png", "price": 260},
+			{"name": "sub_level4", "type": "setting_big", "label": "Sub Leve 4", "image": "ring_substyle/base2_white.png", "ring_base": "ring_base/base2.png", "price": 280}
 		], "ring_metal": [
 		]}
 
@@ -103,11 +103,11 @@ $(() => {
 
 		$(".option_pearl_color").on("click", function() {
 			$("#pearl").attr({"src": "statics/img/"+$(this).attr("data-image")});
-			$(".ring_price").text($(this).attr("data-price"));
+			$(".ring_price").text($(this).find(".price_amount").text());
 		});
 
 		$(".option_pearl_size").on("click", function() {
-			$(".ring_price").text($(this).attr("data-price"));
+			$(".ring_price").text($(this).find(".price_amount").text());
 		});
 
 		$(".option_ring_style").on("click", function() {
@@ -121,7 +121,7 @@ $(() => {
 		$(".option_ring_substyle").on("click", function() {
 			var ring_name = $(this).attr("data-ringbase").split(".");
 			$("#ring_base").attr({"src":  "statics/img/"+ring_name[0]+"_"+$(".wrapper_ring_metal").attr("data-metal")+"."+ring_name[1]}).removeClass("hidden");
-			$(".ring_price").text($(this).attr("data-price"));
+			$(".ring_price").text($(this).find(".price_amount").text());
 			$(".wrapper_ring_substyle").attr({"data-ringbase": $(this).attr("data-ringbase")});
 		});
 
@@ -129,7 +129,7 @@ $(() => {
 			var ring_name = $(".wrapper_ring_substyle").attr("data-ringbase").split(".");
 			if(ring_name.length > 1) {
 				$("#ring_base").attr({"src": "statics/img/"+ring_name[0]+"_"+$(this).attr("data-metal")+"."+ring_name[1]}).removeClass("hidden");
-				$(".ring_price").text($(this).attr("data-price"));
+				$(".ring_price").text($(this).find(".price_amount").text());
 			}
 			$(".wrapper_ring_metal").attr({"data-metal": $(this).attr("data-metal")});
 		});
@@ -180,5 +180,26 @@ $(() => {
 		$(".build-steps .step.second").removeClass("active");
 		$(".build-steps .step.last").removeClass("inactive").addClass("active");
 		$('html, body').animate({ scrollTop: $("#page3").offset().top }, 100);
+	});
+
+	$('.photo #pearl').elevateZoom({
+		zoomWindowWidth: 565,
+		zoomWindowHeight: 565,
+		zoomWindowOffetx: 70,
+		zoomWindowOffety: -31
+	});
+
+	$('.photo').simpleLightbox({showCounter:  true, widthRatio:  0.98, heightRatio: 0.98, loop: false});
+
+	$('.photo').on('shown.simplelightbox', function () {
+		var perl = $('.preview-perl').attr('src');
+		var ring = $('.preview-ring').attr('src');
+		var width = $('.simple-lightbox .sl-image img').width();
+		var style = $('.set-style .selected .label').text();
+		var metal = $('.set-metal .selected .label').text().toLowerCase();
+		var color = perl_color = $('#page1 .set-pearl-color .selected').data('name').toLowerCase();
+		$('.simple-lightbox .sl-image img').css('border', '1px solid #000');
+		$('.simple-lightbox .sl-image div').text(style+' ring of '+metal+' with '+color+' perl');
+		$('.simple-lightbox .sl-image').append('<img src="'+perl+'" style="width:'+width+'px;"><img src="'+ring+'" style="width:'+width+'px;">');
 	});
 });

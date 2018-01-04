@@ -12,6 +12,7 @@
 	<meta name="copyright" content="">
 	<link href="statics/css/red.css" rel="stylesheet" type="text/css">
 	<link href="statics/css/tooltip.css" rel="stylesheet" type="text/css">
+	<link href="statics/css/simplelightbox.min.css" rel="stylesheet" type="text/css">
 	<link href="statics/css/pearl.css" rel="stylesheet" type="text/css">
 	<link href="statics/css/index.css" rel="stylesheet" type="text/css">
 	<script src="statics/js/jquery.js" type="text/javascript"></script>
@@ -99,8 +100,8 @@
 
 			<div class="build-content">
 				<div class="photo">
-					<img id="pearl" src="" class="hidden" />
-					<img id="ring_base" src="" class="hidden" />
+					<img id="pearl" src="" class="hidden" data-zoom-image="statics/img/pearl_color/gold.png" />
+					<img id="ring_base" src="" class="hidden" data-zoom-image="statics/img/pearl_color/gold.png" />
 				</div>
 
 				<div class="options" id="page1">
@@ -138,19 +139,19 @@
 				                        <img src="statics/img/selected.png" class="check">
 				                        <img src="statics/img/pearlsize1.png" class="image pearlsize1">
 				                        <span class="label">6mm</span>
-				                        <span class="price-from">from $120</span>
+				                        <span class="price-from">from $<span class="price_amount">150</span></span>
 				                    </a>
 						<a class="item item3 option_pearl_size" data-price="1450">
 				                        <img src="statics/img/selected.png" class="check">
 				                        <img src="statics/img/pearlsize2.png" class="image  pearlsize2">
 				                        <span class="label">7mm</span>
-				                        <span class="price-from">from $120</span>
+				                        <span class="price-from">from $<span class="price_amount">160</span></span>
 				                    </a>
 						<a class="item item3 option_pearl_size" data-price="1460">
 				                        <img src="statics/img/selected.png" class="check">
 				                        <img src="statics/img/pearlsize3.png" class="image  pearlsize3">
 				                        <span class="label">8mm</span>
-				                        <span class="price-from">from $120</span>
+				                        <span class="price-from">from $<span class="price_amount">170</span></span>
 				                    </a>
 						<div class="clear">
 							<!-- -->
@@ -162,17 +163,17 @@
 						<a class="item item4 active selected">
 				                        <img src="statics/img/selected.png" class="check">
 				                        <span class="label strong">AAA</span>
-				                        <span class="price-from">from $120</span>
+				                        <span class="price-from">from $<span class="price_amount">250</span></span>
 				                    </a>
 						<a class="item item4">
 				                        <img src="statics/img/selected.png" class="check">
 				                        <span class="label strong">AA</span>
-				                        <span class="price-from">from $120</span>
+				                        <span class="price-from">from $<span class="price_amount">260</span></span>
 				                    </a>
 						<a class="item item4">
 				                        <img src="statics/img/selected.png" class="check">
 				                        <span class="label strong">A</span>
-				                        <span class="price-from">from $120</span>
+				                        <span class="price-from">from $<span class="price_amount">270</span></span>
 				                    </a>
 						<div class="clear">
 							<!-- -->
@@ -229,17 +230,17 @@
 							<a class="item item2">
                             <img src="statics/img/selected.png" class="check">
                             <span class="label">G Color, SI Clarity</span>
-                            <span class="price-from">from $120</span>
+                            <span class="price-from">from $<span class="price_amount">350</span></span>
                         </a>
 							<a class="item item2">
                             <img src="statics/img/selected.png" class="check">
                             <span class="label">F Color, VS Clarity</span>
-                            <span class="price-from">from $120</span>
+                            <span class="price-from">from $<span class="price_amount">360</span></span>
                         </a>
 							<a class="item item2">
                             <img src="statics/img/selected.png" class="check">
                             <span class="label">D Color, IS Clarity</span>
-                            <span class="price-from">from $120</span>
+                            <span class="price-from">from $<span class="price_amount">370</span></span>
                         </a>
 							<div class="clear">
 								<!-- -->
@@ -253,49 +254,49 @@
 							<img src="statics/img/selected.png" class="check">
 							<div class="color rose-gold"><!-- --></div>
 							<span class="label">14K Rose Gold</span>
-							<span class="price-from">from $120</span>
+							<span class="price-from">from $<span class="price_amount">410</span></span>
 						</a>
 						<a class="item metal item3 option_ring_metal" data-metal="yellow" data-price="1750">
 							<img src="statics/img/selected.png" class="check">
 							<div class="color yellow-gold"><!-- --></div>
 							<span class="label">14K Yellow Gold</span>
-							<span class="price-from">from $120</span>
+							<span class="price-from">from $<span class="price_amount">420</span></span>
 						</a>
 						<a class="item metal item3 option_ring_metal" data-metal="white" data-price="1760">
 							<img src="statics/img/selected.png" class="check">
 							<div class="color white-gold"><!-- --></div>
 							<span class="label">14K White Gold</span>
-							<span class="price-from">from $120</span>
+							<span class="price-from">from $<span class="price_amount">430</span></span>
 						</a>
 						<a class="item metal item3 option_ring_metal" data-metal="white" data-price="1770">
 							<img src="statics/img/selected.png" class="check">
 							<div class="color silver"><!-- --></div>
 							<span class="label">Silver</span>
-							<span class="price-from">from $120</span>
+							<span class="price-from">from $<span class="price_amount">440</span></span>
 						</a>
 						<a class="item metal item3 option_ring_metal" data-metal="rose" data-price="1780">
 							<img src="statics/img/selected.png" class="check">
 							<div class="color rose-gold"><!-- --></div>
 							<span class="label">18K Rose Gold</span>
-							<span class="price-from">from $120</span>
+							<span class="price-from">from $<span class="price_amount">450</span></span>
 						</a>
 						<a class="item metal item3 option_ring_metal" data-metal="yellow" data-price="1790">
 							<img src="statics/img/selected.png" class="check">
 							<div class="color yellow-gold"><!-- --></div>
 							<span class="label">18K Yellow Gold</span>
-							<span class="price-from">from $120</span>
+							<span class="price-from">from $<span class="price_amount">460</span></span>
 						</a>
 						<a class="item metal item3 option_ring_metal" data-metal="white" data-price="1800">
 							<img src="statics/img/selected.png" class="check">
 							<div class="color white-gold"><!-- --></div>
 							<span class="label">18K White Gold</span>
-							<span class="price-from">from $120</span>
+							<span class="price-from">from $<span class="price_amount">470</span></span>
 						</a>
 						<a class="item metal item3 option_ring_metal" data-metal="white" data-price="1810">
 							<img src="statics/img/selected.png" class="check">
 							<div class="color platinum"><!-- --></div>
 							<span class="label">Platinum</span>
-							<span class="price-from">from $120</span>
+							<span class="price-from">from $<span class="price_amount">480</span></span>
 						</a>
 
 						<div class="clear"></div>
@@ -306,46 +307,45 @@
 						<a class="item item7">
                         <img src="statics/img/selected.png" class="check">
                         <span class="label strong">5</span>
-                        <span class="price-from">from $120</span>
+                        <span class="price-from">from $<span class="price_amount">510</span></span>
                     </a>
 						<a class="item item7">
                         <img src="statics/img/selected.png" class="check">
                         <span class="label strong">5.5</span>
-                        <span class="price-from">from $120</span>
+                        <span class="price-from">from $<span class="price_amount">520</span></span>
                     </a>
 						<a class="item item7">
                         <img src="statics/img/selected.png" class="check">
                         <span class="label strong">6</span>
-                        <span class="price-from">from $120</span>
+                        <span class="price-from">from $<span class="price_amount">530</span></span>
                     </a>
 						<a class="item item7">
                         <img src="statics/img/selected.png" class="check">
                         <span class="label strong">6.5</span>
-                        <span class="price-from">from $120</span>
+                        <span class="price-from">from $<span class="price_amount">540</span></span>
                     </a>
 						<a class="item item7">
                         <img src="statics/img/selected.png" class="check">
                         <span class="label strong">7</span>
-                        <span class="price-from">from $120</span>
+                        <span class="price-from">from $<span class="price_amount">550</span></span>
                     </a>
 						<a class="item item7">
                         <img src="statics/img/selected.png" class="check">
                         <span class="label strong">7.5</span>
-                        <span class="price-from">from $120</span>
+                        <span class="price-from">from $<span class="price_amount">560</span></span>
                     </a>
 						<a class="item item7">
                         <img src="statics/img/selected.png" class="check">
                         <span class="label strong">8</span>
-                        <span class="price-from">from $120</span>
+                        <span class="price-from">from $<span class="price_amount">570</span></span>
                     </a>
 						<a class="item item7">
                         <img src="statics/img/selected.png" class="check">
                         <span class="label strong">8.5</span>
-                        <span class="price-from">from $120</span>
+                        <span class="price-from">from $<span class="price_amount">580</span></span>
                     </a>
-						<div class="clear">
-							<!-- -->
-						</div>
+						<div class="clear"></div>
+
 						<a class="show-more" id="showmore" onclick="javascript:jhide(&#39;showmore&#39;);jhide(&#39;basic&#39;);jshow(&#39;more&#39;);jshow(&#39;showless&#39;);"><span>View more sizes</span></a>
 					</div>
 					<div class="option-list four" id="more" style="display:none;">
@@ -647,6 +647,9 @@
 
 	<script src="statics/js/icheck.js" type="text/javascript"></script>
 	<script src="statics/js/tooltip.js" type="text/javascript"></script>
+	<script type="text/javascript" src="statics/js/tooltip.js"></script>
+	<script type="text/javascript" src="statics/js/jquery.elevatezoom.js" ></script>
+	<script type="text/javascript" src="statics/js/simple-lightbox.min.js"></script>
 	<script src="statics/js/index.js" type="text/javascript"></script>
 </body>
 
