@@ -282,7 +282,7 @@ if ( typeof Object.create !== 'function' ) {
 				if(self.options.zoomType == "window") {
 
 					self.zoomWindow.css({ backgroundImage: "url('" + self.imageSrc + "')" });
-if($('.photo').hasClass('photp_necklace')){
+if($('.photo').hasClass('photo_necklace')){
 	self.zoomWindow.append('<img src="" class="zoom_ring_image">');
 	self.zoomWindow.append('<img src="" class="zoom_clasp_image">');
 	//tone($("[data-slider]").data('value'));
@@ -406,10 +406,9 @@ if($('.photo').hasClass('photp_necklace')){
 				//  lensFadeOut: 500,  zoomTintFadeIn
 				self.zoomContainer.add(self.$elem).mouseenter(function(){
 
-if($('.photo').hasClass('photp_necklace')){
+if($('.photo').hasClass('photo_necklace')){
 	$('.zoom_ring_image', self.zoomWindow).attr('src', getUrlNecklace());
 	$('.zoom_clasp_image', self.zoomWindow).attr('src', getUrlClasp());	
-
 }else{
 	$('img', self.zoomWindow).attr('src', getUrlRing());
 }
