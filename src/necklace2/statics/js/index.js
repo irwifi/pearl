@@ -35,8 +35,8 @@ $(() => {
 			{"name": "AA",  "label": "AA",  "price": 120},
 			{"name": "A",   "label": "A",   "price": 130}
 		], "clasp": [
-			{"name": "dolor",   "label": "Dolor",   "thumb": "products/clasp/1.jpg", "price": 110},
-			{"name": "egestas", "label": "Egestas", "thumb": "products/clasp/2.jpg", "price": 120},
+			{"name": "egestas", "label": "Egestas", "thumb": "products/clasp/2.jpg", "price": 110},		
+			{"name": "dolor",   "label": "Dolor",   "thumb": "products/clasp/1.jpg", "price": 120},		
 			{"name": "sapien",  "label": "Sapien",  "thumb": "products/clasp/3.jpg", "price": 130}
 		], "ring_metal": [
 	]}
@@ -85,15 +85,18 @@ $(() => {
 			$(".option_pearl_color:not(.hidden):first").trigger("click");
 		});
 
-		$(".option_pearl_size").on("click", function() {
-			setPearlSize($(this).data('value'));
+		$(".option_pearl_size").on("click", function(event) {
+			$('#body_outline').data('type', 'neck_without_body');
+			$("#pearl").attr({"src": getUrlNecklace()});
+			setPearlSize($(this).data('name'));
+			zoomReset();
 		});
 
-		$(".option_pearl_color").on("click", function() {
+		$(".option_pearl_color").on("click", function(event) {
 			var url = "statics/img/" + $(this).attr("data-image");
 			var thumb = $('.image.thumb', this).attr("src");
 			$(".option_pearl_size .image.thumb").attr('src', thumb);
-			$("#body_outline").attr({"src": "statics/img/clear.png", "data-zoom-image": "statics/img/clear.png "}).data('type', 'with_body');
+			$("#body_outline").attr({"src": "statics/img/clear.png"}).data('type', 'pearl_without_body');
 			$("#pearl").attr({"src": url});
 			zoomReset();
 		});
@@ -110,9 +113,8 @@ $(() => {
 		$('.selectors a').on("click", function(event) {
 			event.preventDefault();
 			var color = $('.option_pearl_color.selected').data('name');
-			if($(this).data('type')=='with_body') var pearl = "statics/img/products/necklace_body/"+color+".jpg";
+			if($(this).data('type')=='neck_with_body') var pearl = "statics/img/products/necklace_body/"+color+".jpg";
 			else var pearl = "statics/img/products/necklace/"+color+".jpg";
-
 			$(".photo #pearl").attr({"src": pearl});
 			$(".photo #body_outline").attr({"src": 'statics/img/clear.png', "data-zoom-image": 'statics/img/clear.png'}).data('type', $(this).data('type'));
 			$(".photo #clasp").attr('src', getUrlClasp());
@@ -135,15 +137,17 @@ $(() => {
 		});
 
 		setTimeout(() => {
-			$.each($('.option-list'), function(index, val) {
+			$.each($('.option-list').not('.size-option-list'), function(index, val) {
 				$(".item:not('.hidden'):first", $(val)).trigger("click");
 			});
+			$('.metal').eq(2).trigger("click");
+
 		}, 100);
 
 
 		$(".page1_link").on("click", () => {
 			toStep(1);
-			$("#body_outline").attr({"src": "statics/img/clear.png", "data-zoom-image": "statics/img/clear.png"}).data('type', 'with_body');
+			$("#body_outline").attr({"src": "statics/img/clear.png"}).data('type', 'pearl_without_body');
 			$(".photo #pearl").attr({"src": getUrlNecklace()});
 			$(".photo #clasp").attr('src', getUrlClasp());
 			$('.selectors a').addClass('hidden');
@@ -156,14 +160,13 @@ $(() => {
 			toStep(2);
 		});
 
-
 		$("#page1_submit").on("click", () => {
 			toStep(2);
 			$('.selectors a').removeClass('hidden');
 			$('#pearl').css({width: '100%',	left: 0, marginTop: 0});
-			$(".photo #body_outline").attr({"src": "statics/img/clear.png", "data-zoom-image": "statics/img/clear.png"}).data('type', 'without_body');
+			$(".photo #body_outline").attr({"src": "statics/img/clear.png", "data-zoom-image": "statics/img/clear.png"}).data('type', 'neck_without_body');
 			$(".photo #pearl").attr({"src": getUrlNecklace()});
-			$('#clasp').attr('src', getUrlClasp());		
+			$('#clasp').attr('src', getUrlClasp());	
 			zoomReset();
 			$('html, body').animate({ scrollTop: $("#page2").offset().top }, 0);		
 		});
@@ -186,11 +189,9 @@ $(() => {
 			}else{
 				var clasp = $('#clasp').attr('src');
 			}
-
 			$('.simple-lightbox .sl-image').append('<img src="'+bg+'" style="width:'+width+'px;">');
 			$('.simple-lightbox .sl-image').append('<img src="'+pearl+'" style="width:'+width+'px;">');
 			$('.simple-lightbox .sl-image').append('<img src="'+clasp+'" style="width:'+width+'px;">');
-
 			$('.simple-lightbox .sl-image img').css('border', '1px solid #000');		
 		});
 
@@ -211,9 +212,9 @@ $(() => {
 		}
 
 		function setPearlSize(value){
-			var width = value*6+49;
+			var width = value*8+32;
 			var margin = (100-width)/2;
-			$('#pearl').css({width: width +'%',	left: margin +'%', marginTop: margin/2 +'%'});
+			$('#pearl').css({width: width +'%',	left: margin +'%', marginTop: margin +'%'});
 		}
 
 		function setPrice(){
@@ -261,18 +262,19 @@ function tone(value){
 
 function getUrlNecklace(){
 	var color = $('.option_pearl_color.selected').data('name');
-	if($('#page1').css('display')=='block')	var url = 'statics/img/pearl_color/'+color+'.png';
-	else if($('#body_outline').data('type')=="with_body"){
-			var url = 'statics/img/products/necklace_body/'+color+'.jpg';
+	if($('#body_outline').data('type')=="pearl_without_body"){
+		var url = 'statics/img/pearl_color/'+color+'.png';
+	}else if($('#body_outline').data('type')=="neck_without_body"){
+		var url = 'statics/img/products/necklace/'+color+'.jpg';
 		}else{
-			var url = 'statics/img/products/necklace/'+color+'.jpg';
-		}		
+		var url = 'statics/img/products/necklace_body/'+color+'.jpg';
+		}	
 	return url;
 }
 
 
 function getUrlClasp(){	
-	if($('#page1').css('display')=='block' || $('#body_outline').data('type')=="with_body")	{
+	if($('#page1').css('display')=='block' || $('#body_outline').data('type')=="neck_with_body")	{
 		var url = 'statics/img/clear.png';
 	}else {
 		var clasp = $('.option_clasp.selected').data('name');

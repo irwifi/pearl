@@ -407,6 +407,7 @@ if($('.photo').hasClass('photo_necklace')){
 				self.zoomContainer.add(self.$elem).mouseenter(function(){
 
 if($('.photo').hasClass('photo_necklace')){
+	console.log(getUrlNecklace());
 	$('.zoom_ring_image', self.zoomWindow).attr('src', getUrlNecklace());
 	$('.zoom_clasp_image', self.zoomWindow).attr('src', getUrlClasp());	
 }else{
