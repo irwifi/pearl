@@ -1,0 +1,55 @@
+/**
+* jq360 css style
+*/
+
+/* parent container style */
+.jq360-parent{
+     overflow: hidden;
+     position: relative;
+     display: inline-block;
+     /* background-image: url("../images/Pearl/black.png"); */
+     background-size: cover
+    /*  height: 300px;
+     width: 300px; */
+}
+
+/* image style */
+.jq360-image{
+     position: relative;
+     height: 300px;
+     width: 300px;
+     top: 0; 
+     left: 0 
+}
+
+/* image loader progress and background style*/
+.jq360-progress-bg,.jq360-progress-bar{
+    position: absolute;
+    height: 10px;
+    bottom: 5%; 
+    left: 10%;
+    right: 10%;
+}
+
+/* image loader progress style*/
+.jq360-progress-bg{
+    width: 80%;
+    background-color: rgb(175, 144, 144); 
+}
+
+/* iage loader background style*/
+.jq360-progress-bar{
+    width: 0; 
+    background-color: rgb(21, 31, 87);
+}
+
+/* image loader overlay */
+.jq360-overlay{
+    position: absolute; 
+    cursor: wait;
+    background: rgba(0, 0, 0, 0.61);
+    top: 0; 
+    left: 0;
+    /* background-color: black;
+    filter: alpha(opacity=70) */
+}
