@@ -99,16 +99,37 @@
 			</div>
 
 			<div class="build-content">
-				<a class="lightBox-link" href="statics/img/white_bg.jpg" >
-					<div class="photo">
-						<div class="wrap">
-							<img id="pearl" src="" class="hidden" data-zoom-image="" />
-							<img id="ring_base" src="" class="hidden" data-zoom-image="" />
-						</div>
-					</div>
-				</a>
 
-				<div class="options" id="page1">
+				<div class="photo">
+					<img class="around">
+					<a class="lightBox-link" href="statics/img/white_bg.jpg" >
+						<div class="wrap">
+							<img id="ring" src="" data-zoom-image="" />
+						</div>
+					</a>
+
+					<div class="selectors">
+			            <a class="hidden view-link active" href="#" data-type="neck_without_body">
+			                <img src="statics/img/logo.png" />
+			            </a>
+			            <a class="hidden view-link" href="#" data-type="neck_with_body">
+			                <img src="statics/img/logo.png" />
+			            </a>
+			            <a class="hidden view-link" href="#" data-type="neck_without_body">
+			                <img src="statics/img/logo.png" />
+			            </a>
+			            <a class="hidden view-link" href="#" data-type="neck_with_body">
+			                <img src="statics/img/logo.png" />
+			            </a>
+			            <a class="hidden around-link btn btn-action" href="#">
+			            	<span class="around-btn-on">auto 360&deg;</span><span class="around-btn-off hidden">off 360&deg;</span>
+			            </a>
+			        </div>
+		        </div>
+
+
+
+				<div class="options page" id="page1">
 					<h2>Customize Your Pearl</h2>
 					<span class="title">Pearl Type<a href="http://transformagency.biz/clients2/pearl/build-your-own/alt/build-your-own-ring-1.php#" class="question-tip tooltip tooltipstered">?</a><!-- <span class="selected">Praesent</span> --></span>
 					<div class="option-list four">
@@ -124,8 +145,8 @@
 					</div>
 
 					<span class="title">Pearl Color<a href="http://transformagency.biz/clients2/pearl/build-your-own/alt/build-your-own-ring-1.php#" class="question-tip tooltip tooltipstered">?</a><!-- <span class="selected">Praesent</span> --></span>
-					<div class="option-list" id="colorsempty">please choose a pearl type first</div>
-					<div id="colors" style="display:none">
+					<div class="option-list hidden" id="colorsempty">please choose a pearl type first</div>
+					<div id="colors">
 						<div class="wrapper_pearl_color option-list four">
 							<a class="item item2 option_pearl_color sample hidden" data-name="" data-type="" data-image="">
 								<img src="statics/img/selected.png" class="check">
@@ -190,7 +211,7 @@
 					</div>
 				</div>
 
-				<div class="options" id="page2">
+				<div class="options page hidden" id="page2">
 					<h2>Customize Your Setting</h2>
 					<span class="title">Setting Style<a href="http://transformagency.biz/clients2/pearl/build-your-own/alt/build-your-own-ring-2.php#" class="question-tip tooltip tooltipstered">?</a><br><br><div class="icheckbox_square-red checked" style="position: relative;"><input type="checkbox" checked="checked" style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div><span class="selected"><label for="pearls">Setting with Diamonds</label></span></span>
 					<div class="option-list two">
@@ -198,8 +219,7 @@
 							<a class="item item1 option_ring_style sample hidden" data-name="" data-image="">
 								<img src="statics/img/selected.png" class="check">
 								<div class="ring_image">
-									<img src="statics/img/pearl_color/pearl.png" class="image thumb pearl">
-									<img src="statics/img/ring_style/ring.png" class="image thumb ring">
+									<img src="statics/img/ring_style/ring.png" class="image thumb">
 								</div>
 								<span class="label"></span>
 								<span class="price-from">from $<span class="price_amount"></span></span>
@@ -214,11 +234,11 @@
 						<div class="option-list three">
 							<div class="wrapper_ring_substyle" data-ringbase="">
 								<a class="item option_ring_substyle sample hidden" data-name="" data-type="" data-image="" data-ringbase="">
-									<img src="statics/img/selected.png" class="check">
 									<div class="ring_image">
-										<img src="statics/img/pearl_color/pearl.png" class="image thumb pearl">
 										<img src="statics/img/ring_substyle/ring.png" class="image thumb ring">
-									</div>
+									</div>									
+									<img src="statics/img/selected.png" class="check">
+
 									<span class="label"></span>
 									<span class="price-from">from $<span class="price_amount"></span></span>
 								</a>
@@ -253,50 +273,50 @@
 					</div>
 
 					<span class="title">Metal Type<a href="http://transformagency.biz/clients2/pearl/build-your-own/alt/build-your-own-ring-2.php#" class="question-tip tooltip tooltipstered">?</a></span>
-					<div class="option-list four wrapper_ring_metal" data-metal="white">
-						<a class="item metal item3 option_ring_metal" data-metal="rose" data-price="1740">
+					<div class="option-list four wrapper_ring_metal">
+						<a class="item metal item3 option_ring_metal" data-metal="R" data-price="1740">
 							<img src="statics/img/selected.png" class="check">
 							<div class="color rose-gold"><!-- --></div>
 							<span class="label">14K Rose Gold</span>
 							<span class="price-from">from $<span class="price_amount">410</span></span>
 						</a>
-						<a class="item metal item3 option_ring_metal" data-metal="yellow" data-price="1750">
+						<a class="item metal item3 option_ring_metal" data-metal="Y" data-price="1750">
 							<img src="statics/img/selected.png" class="check">
 							<div class="color yellow-gold"><!-- --></div>
 							<span class="label">14K Yellow Gold</span>
 							<span class="price-from">from $<span class="price_amount">420</span></span>
 						</a>
-						<a class="item metal item3 option_ring_metal" data-metal="white" data-price="1760">
+						<a class="item metal item3 option_ring_metal" data-metal="W" data-price="1760">
 							<img src="statics/img/selected.png" class="check">
 							<div class="color white-gold"><!-- --></div>
 							<span class="label">14K White Gold</span>
 							<span class="price-from">from $<span class="price_amount">430</span></span>
 						</a>
-						<a class="item metal item3 option_ring_metal" data-metal="white" data-price="1770">
+						<a class="item metal item3 option_ring_metal" data-metal="W" data-price="1770">
 							<img src="statics/img/selected.png" class="check">
 							<div class="color silver"><!-- --></div>
 							<span class="label">Silver</span>
 							<span class="price-from">from $<span class="price_amount">440</span></span>
 						</a>
-						<a class="item metal item3 option_ring_metal" data-metal="rose" data-price="1780">
+						<a class="item metal item3 option_ring_metal" data-metal="R" data-price="1780">
 							<img src="statics/img/selected.png" class="check">
 							<div class="color rose-gold"><!-- --></div>
 							<span class="label">18K Rose Gold</span>
 							<span class="price-from">from $<span class="price_amount">450</span></span>
 						</a>
-						<a class="item metal item3 option_ring_metal" data-metal="yellow" data-price="1790">
+						<a class="item metal item3 option_ring_metal" data-metal="Y" data-price="1790">
 							<img src="statics/img/selected.png" class="check">
 							<div class="color yellow-gold"><!-- --></div>
 							<span class="label">18K Yellow Gold</span>
 							<span class="price-from">from $<span class="price_amount">460</span></span>
 						</a>
-						<a class="item metal item3 option_ring_metal" data-metal="white" data-price="1800">
+						<a class="item metal item3 option_ring_metal" data-metal="W" data-price="1800">
 							<img src="statics/img/selected.png" class="check">
 							<div class="color white-gold"><!-- --></div>
 							<span class="label">18K White Gold</span>
 							<span class="price-from">from $<span class="price_amount">470</span></span>
 						</a>
-						<a class="item metal item3 option_ring_metal" data-metal="white" data-price="1810">
+						<a class="item metal item3 option_ring_metal" data-metal="W" data-price="1810">
 							<img src="statics/img/selected.png" class="check">
 							<div class="color platinum"><!-- --></div>
 							<span class="label">Platinum</span>
@@ -309,133 +329,133 @@
 					<span class="title">Ring Size<a href="http://transformagency.biz/clients2/pearl/build-your-own/alt/build-your-own-ring-2.php#" class="question-tip tooltip tooltipstered">?</a><!-- <span class="selected">Praesent</span> --></span>
 					<div id="basic" class="option-list four">
 						<a class="item item7">
-                        <img src="statics/img/selected.png" class="check">
-                        <span class="label strong">5</span>
-                        <span class="price-from">from $<span class="price_amount">510</span></span>
-                    </a>
+	                        <img src="statics/img/selected.png" class="check">
+	                        <span class="label strong">5</span>
+	                        <span class="price-from">from $<span class="price_amount">510</span></span>
+	                    </a>
 						<a class="item item7">
-                        <img src="statics/img/selected.png" class="check">
-                        <span class="label strong">5.5</span>
-                        <span class="price-from">from $<span class="price_amount">520</span></span>
-                    </a>
+	                        <img src="statics/img/selected.png" class="check">
+	                        <span class="label strong">5.5</span>
+	                        <span class="price-from">from $<span class="price_amount">520</span></span>
+	                    </a>
 						<a class="item item7">
-                        <img src="statics/img/selected.png" class="check">
-                        <span class="label strong">6</span>
-                        <span class="price-from">from $<span class="price_amount">530</span></span>
-                    </a>
+	                        <img src="statics/img/selected.png" class="check">
+	                        <span class="label strong">6</span>
+	                        <span class="price-from">from $<span class="price_amount">530</span></span>
+	                    </a>
 						<a class="item item7">
-                        <img src="statics/img/selected.png" class="check">
-                        <span class="label strong">6.5</span>
-                        <span class="price-from">from $<span class="price_amount">540</span></span>
-                    </a>
+	                        <img src="statics/img/selected.png" class="check">
+	                        <span class="label strong">6.5</span>
+	                        <span class="price-from">from $<span class="price_amount">540</span></span>
+	                    </a>
 						<a class="item item7">
-                        <img src="statics/img/selected.png" class="check">
-                        <span class="label strong">7</span>
-                        <span class="price-from">from $<span class="price_amount">550</span></span>
-                    </a>
+	                        <img src="statics/img/selected.png" class="check">
+	                        <span class="label strong">7</span>
+	                        <span class="price-from">from $<span class="price_amount">550</span></span>
+	                    </a>
 						<a class="item item7">
-                        <img src="statics/img/selected.png" class="check">
-                        <span class="label strong">7.5</span>
-                        <span class="price-from">from $<span class="price_amount">560</span></span>
-                    </a>
+	                        <img src="statics/img/selected.png" class="check">
+	                        <span class="label strong">7.5</span>
+	                        <span class="price-from">from $<span class="price_amount">560</span></span>
+	                    </a>
 						<a class="item item7">
-                        <img src="statics/img/selected.png" class="check">
-                        <span class="label strong">8</span>
-                        <span class="price-from">from $<span class="price_amount">570</span></span>
-                    </a>
+	                        <img src="statics/img/selected.png" class="check">
+	                        <span class="label strong">8</span>
+	                        <span class="price-from">from $<span class="price_amount">570</span></span>
+	                    </a>
 						<a class="item item7">
-                        <img src="statics/img/selected.png" class="check">
-                        <span class="label strong">8.5</span>
-                        <span class="price-from">from $<span class="price_amount">580</span></span>
-                    </a>
+	                        <img src="statics/img/selected.png" class="check">
+	                        <span class="label strong">8.5</span>
+	                        <span class="price-from">from $<span class="price_amount">580</span></span>
+	                    </a>
 						<div class="clear"></div>
 
-						<a class="show-more" id="showmore" onclick="javascript:jhide(&#39;showmore&#39;);jhide(&#39;basic&#39;);jshow(&#39;more&#39;);jshow(&#39;showless&#39;);"><span>View more sizes</span></a>
+						<a class="show-more" id="showmore" onclick="javascript:jhide(&#39;showmore&#39;);jhide(&#39;basic&#39;);jshow(&#39;more&#39;);jshow(&#39;showless&#39;);">
+							<span>View more sizes</span>
+						</a>
 					</div>
 					<div class="option-list four" id="more" style="display:none;">
 						<a class="item item7">
-                        <img src="statics/img/selected.png" class="check">
-                        <span class="label strong">4</span>
-                        <span class="price-from">from $120</span>
-                    </a>
+	                        <img src="statics/img/selected.png" class="check">
+	                        <span class="label strong">4</span>
+	                        <span class="price-from">from $120</span>
+                    	</a>
 						<a class="item item7">
-                        <img src="statics/img/selected.png" class="check">
-                        <span class="label strong">4.5</span>
-                        <span class="price-from">from $120</span>
-                    </a>
+	                        <img src="statics/img/selected.png" class="check">
+	                        <span class="label strong">4.5</span>
+	                        <span class="price-from">from $120</span>
+	                    </a>
 						<a class="item item7">
-                        <img src="statics/img/selected.png" class="check">
-                        <span class="label strong">5</span>
-                        <span class="price-from">from $120</span>
-                    </a>
+	                        <img src="statics/img/selected.png" class="check">
+	                        <span class="label strong">5</span>
+	                        <span class="price-from">from $120</span>
+	                    </a>
 						<a class="item item7">
-                        <img src="statics/img/selected.png" class="check">
-                        <span class="label strong">5.5</span>
-                        <span class="price-from">from $120</span>
-                    </a>
+	                        <img src="statics/img/selected.png" class="check">
+	                        <span class="label strong">5.5</span>
+	                        <span class="price-from">from $120</span>
+	                    </a>
 						<a class="item item7">
-                        <img src="statics/img/selected.png" class="check">
-                        <span class="label strong">6</span>
-                        <span class="price-from">from $120</span>
-                    </a>
+	                        <img src="statics/img/selected.png" class="check">
+	                        <span class="label strong">6</span>
+	                        <span class="price-from">from $120</span>
+	                    </a>
 						<a class="item item7">
-                        <img src="statics/img/selected.png" class="check">
-                        <span class="label strong">6.5</span>
-                        <span class="price-from">from $120</span>
-                    </a>
+	                        <img src="statics/img/selected.png" class="check">
+	                        <span class="label strong">6.5</span>
+	                        <span class="price-from">from $120</span>
+	                    </a>
 						<a class="item item7">
-                        <img src="statics/img/selected.png" class="check">
-                        <span class="label strong">7</span>
-                        <span class="price-from">from $120</span>
-                    </a>
+	                        <img src="statics/img/selected.png" class="check">
+	                        <span class="label strong">7</span>
+	                        <span class="price-from">from $120</span>
+	                    </a>
 						<a class="item item7">
-                        <img src="statics/img/selected.png" class="check">
-                        <span class="label strong">7.5</span>
-                        <span class="price-from">from $120</span>
-                    </a>
+	                        <img src="statics/img/selected.png" class="check">
+	                        <span class="label strong">7.5</span>
+	                        <span class="price-from">from $120</span>
+	                    </a>
 						<a class="item item7">
-                        <img src="statics/img/selected.png" class="check">
-                        <span class="label strong">8</span>
-                        <span class="price-from">from $120</span>
-                    </a>
+	                        <img src="statics/img/selected.png" class="check">
+	                        <span class="label strong">8</span>
+	                        <span class="price-from">from $120</span>
+	                    </a>
 						<a class="item item7">
-                        <img src="statics/img/selected.png" class="check">
-                        <span class="label strong">8.5</span>
-                        <span class="price-from">from $120</span>
-                    </a>
+	                        <img src="statics/img/selected.png" class="check">
+	                        <span class="label strong">8.5</span>
+	                        <span class="price-from">from $120</span>
+	                    </a>
 						<a class="item item7">
-                        <img src="statics/img/selected.png" class="check">
-                        <span class="label strong">9</span>
-                        <span class="price-from">from $120</span>
-                    </a>
+	                        <img src="statics/img/selected.png" class="check">
+	                        <span class="label strong">9</span>
+	                        <span class="price-from">from $120</span>
+	                    </a>
 						<a class="item item7">
-                        <img src="statics/img/selected.png" class="check">
-                        <span class="label strong">9.5</span>
-                        <span class="price-from">from $120</span>
-                    </a>
+	                        <img src="statics/img/selected.png" class="check">
+	                        <span class="label strong">9.5</span>
+	                        <span class="price-from">from $120</span>
+	                    </a>
 						<a class="item item7">
-                        <img src="statics/img/selected.png" class="check">
-                        <span class="label strong">10</span>
-                        <span class="price-from">from $120</span>
-                    </a>
+	                        <img src="statics/img/selected.png" class="check">
+	                        <span class="label strong">10</span>
+	                        <span class="price-from">from $120</span>
+	                    </a>
 						<a class="item item7">
-                        <img src="statics/img/selected.png" class="check">
-                        <span class="label strong">10.5</span>
-                        <span class="price-from">from $120</span>
-                    </a>
+	                        <img src="statics/img/selected.png" class="check">
+	                        <span class="label strong">10.5</span>
+	                        <span class="price-from">from $120</span>
+	                    </a>
 						<a class="item item7">
-                        <img src="statics/img/selected.png" class="check">
-                        <span class="label strong">11</span>
-                        <span class="price-from">from $120</span>
-                    </a>
+	                        <img src="statics/img/selected.png" class="check">
+	                        <span class="label strong">11</span>
+	                        <span class="price-from">from $120</span>
+	                    </a>
 						<a class="item item7">
-                        <img src="statics/img/selected.png" class="check">
-                        <span class="label strong">11.5</span>
-                        <span class="price-from">from $120</span>
-                    </a>
-						<div class="clear">
-							<!-- -->
-						</div>
+	                        <img src="statics/img/selected.png" class="check">
+	                        <span class="label strong">11.5</span>
+	                        <span class="price-from">from $120</span>
+	                    </a>
+						<div class="clear"></div>
 						<a class="show-less" id="showless" onclick="javascript:jhide(&#39;more&#39;);jshow(&#39;showmore&#39;);jhide(&#39;showless&#39;);jshow(&#39;basic&#39;);" style="display:none;"><span>View less sizes</span></a>
 					</div>
 					<span class="title">Engraving<a href="http://transformagency.biz/clients2/pearl/build-your-own/alt/build-your-own-ring-2.php#" class="question-tip tooltip tooltipstered">?</a>&nbsp;&nbsp;<span class="selected">(optional)</span></span>
@@ -485,32 +505,32 @@
 						</select>
 						<link href="statics/css/css.css" rel="stylesheet">
 						<style>
-						.build-your-own .build-content .options .font-selector p {
-							font-family: 'Poppins';
-							font-weight: 700;
-						}
+							.build-your-own .build-content .options .font-selector p {
+								font-family: 'Poppins';
+								font-weight: 700;
+							}
 
-						.build-your-own .build-content .options .font-selector .default {
-							font-family: 'Poppins';
-							font-weight: 700;
-						}
+							.build-your-own .build-content .options .font-selector .default {
+								font-family: 'Poppins';
+								font-weight: 700;
+							}
 
-						.build-your-own .build-content .options .font-selector .font1 {
-							font-family: 'Bitter';
-							font-weight: 700;
-						}
+							.build-your-own .build-content .options .font-selector .font1 {
+								font-family: 'Bitter';
+								font-weight: 700;
+							}
 
-						.build-your-own .build-content .options .font-selector .font2 {
-							font-family: 'Lobster';
-						}
+							.build-your-own .build-content .options .font-selector .font2 {
+								font-family: 'Lobster';
+							}
 
-						.build-your-own .build-content .options .font-selector .font3 {
-							font-family: 'Gloria Hallelujah';
-						}
+							.build-your-own .build-content .options .font-selector .font3 {
+								font-family: 'Gloria Hallelujah';
+							}
 
-						.build-your-own .build-content .options .font-selector .font4 {
-							font-family: 'Pacifico';
-						}
+							.build-your-own .build-content .options .font-selector .font4 {
+								font-family: 'Pacifico';
+							}
 						</style>
 						<script>
 						var selectedFont = 'default';
@@ -526,7 +546,7 @@
 					</div>
 				</div>
 
-				<div class="options" id="page3">
+				<div class="options page hidden" id="page3">
 					<h2>Review Your Ring</h2>
 					<div class="actions clean">
 						<span class="build-price">Price: $<span class="ring_price">00</span></span>
@@ -653,6 +673,7 @@
 	<script type="text/javascript" src="statics/js/jquery.elevatezoom.js" ></script>
 	<script type="text/javascript" src="statics/js/simple-lightbox.min.js"></script>
 	<script src="statics/js/index.js" type="text/javascript"></script>
+	<script src="statics/js/jquery.threesixty.js" type="text/javascript"></script>
 </body>
 
 </html>

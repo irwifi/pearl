@@ -9,9 +9,6 @@
   }
 /* Global ====================================== END */
 
-#page2, #page3 {
-	display: none;
-}
 
 .btn-action,
 .page1_link, .page2_link {
@@ -43,6 +40,12 @@
 .photo {
 	height: 470px;
 	padding: 60px;
+}
+.progressBg, .progressBar{
+	display: none;
+}
+img.around{
+	width: 100%;
 }
 
 .photo img {
@@ -85,3 +88,9 @@
     font-weight: 400;
     text-shadow: 1px 1px 0px black;
 }
+
+
+.item .ring_image{
+	margin-top: -10px;
+    margin-bottom: 10px;
+ )

@@ -108,9 +108,7 @@ if ( typeof Object.create !== 'function' ) {
 					self.options.onZoomedImageLoaded(self.$elem);
 				}
 				newImg.src = imgsrc; // this must be done AFTER setting onload
-
 				return;
-
 			},
 
 			startZoom: function( ) {
@@ -283,9 +281,9 @@ if ( typeof Object.create !== 'function' ) {
 				if(self.options.zoomType == "window") {
 
 					self.zoomWindow.css({ backgroundImage: "url('" + self.imageSrc + "')" });
-if($('#page2').css('display')=='block'){
-	self.zoomWindow.append('<img src="" class="zoom_ring_image">');
-}
+//if($('#page2').css('display')=='block'){
+//	self.zoomWindow.append('<img src="" class="zoom_ring_image">');
+//}
 				}
 				if(self.options.zoomType == "inner") {
 					self.zoomWindow.css({ backgroundImage: "url('" + self.imageSrc + "')" });
@@ -400,7 +398,7 @@ if($('#page2').css('display')=='block'){
 				//  lensFadeOut: 500,  zoomTintFadeIn
 				self.zoomContainer.add(self.$elem).mouseenter(function(){
 
-					$('img', self.zoomWindow).attr('src', getUrlRing());
+//$('img', self.zoomWindow).attr('src', getUrlRing());
 
 					if(self.overWindow == false){self.setElements("show");}
 
@@ -1277,8 +1275,6 @@ if($('#page2').css('display')=='block'){
 						}
 
 					}
-
-
 				}
 
 			},
