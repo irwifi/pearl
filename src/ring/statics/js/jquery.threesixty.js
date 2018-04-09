@@ -10,6 +10,12 @@
  */
 
 jQuery.fn.threesixty = function(options){
+
+function loadBack( index ) {
+	$( '.back360' ).attr( 'src', back360[ index ] );
+}
+
+if( typeof timer != 'undefined' ) clearInterval(timer);
 	options = options || {};
 	options.images = options.images || [];
 	options.method = options.method || "click" //can be click, mouse move or auto
@@ -28,9 +34,12 @@ jQuery.fn.threesixty = function(options){
 		var pic = $(this);
 
 	$(function() {
+
+
 		var cache = [];
 		var parent = $("<div>");
-		parent.css({height:pic.height(), width:pic.width(), overflow:"hidden", position:"relative"});
+		//parent.css({height:pic.height(), width:pic.width(), overflow:"hidden", position:"relative"});
+		parent.css({height:'440px', width:'440px', overflow:"hidden", position:"absolute", zIndex: "500"});
 		pic.wrap(parent).css({position:"relative",top:0,left:0});
 		parent = pic.parent();
 		//Binding the progress bar
@@ -42,16 +51,17 @@ jQuery.fn.threesixty = function(options){
 		}
 		catch (e)
 		{
-		 overlay = $("<div></div>").css({cursor:"wait", width:pic.width(), height:pic.height(), backgroundColor:"black", filter:"alpha(opacity=70)",  position:"absolute","top":0,left:0 }).addClass("overlay");		
+		 overlay = $("<div></div>").css({cursor:"wait", width:pic.width(), height:pic.height(), backgroundColor:"black", filter:"alpha(opacity=70)",  position:"absolute","top":0,left:0 }).addClass("overlay");
 		}
 
 		//Nasty overlay capturing all the events :P
 		overlay.click(function(e) { e.preventDefault(); e.stopPropagation(); });
 		overlay.mousedown(function(e) { e.preventDefault(); e.stopPropagation(); });
 
-		parent.append(overlay).append(progressBg).append(progressBar);
+		//parent.append(overlay).append(progressBg).append(progressBar);
+parent.prepend('<img class="back360">');
 		pic.css({cursor:"all-scroll"});
-		
+
 
 		var totalProgress = 0;
 		var loaded=false;
@@ -63,10 +73,11 @@ jQuery.fn.threesixty = function(options){
 				{
 					pic.data("tempIndex", index)
 					pic.attr("src", $(this).attr("src"))
-				}	
+				}
 
 				var progress = pic.parent().find(".progressBar");
 				totalProgress++;
+
 				var maxsize = pic.parent().find(".progressBg").width();
 				var newWidth = (totalProgress/options.images.length)*maxsize;
 				progress.stop(true,true).animate({width:newWidth},250);
@@ -75,11 +86,11 @@ jQuery.fn.threesixty = function(options){
 					pic.parent().find(".overlay, .progressBar, .progressBg").remove();
 				}
 			});
-			cache.push(o); 
+			cache.push(o);
 		});
 
 	})
-		
+
 
 		for (var x=1; x<=options.cycle; x++)
 			for (var y=0; y<options.images.length; y++)
@@ -106,7 +117,7 @@ jQuery.fn.threesixty = function(options){
 				if (newTop>0) newTop=0;
 				if (pic.parent().height() + Math.abs(newTop) > pic.height())
 					newTop = -1*pic.height()+pic.parent().height();
-	
+
 				pic.css({left:newLeft, top:newTop});
 		}
 
@@ -117,21 +128,21 @@ jQuery.fn.threesixty = function(options){
 				pic.data("refTouchY",evt.pageY);
 				pic.data("refLocX",parseInt(pic.css("left")));
 				pic.data("refLocY",parseInt(pic.css("top")));
-			
+
 			}
 
  			evt.preventDefault();
  			if (pic.data("enabled")=="1" || options.method == "mousemove")
-			{	
+			{
 				if (evt.preventDefault) evt.preventDefault();
-	
+
 				var e = evt;
 				if (pic.data("scaled") == false)
 				{
 					var distance = e.pageX - pic.data("refTouchX");	//distance hold the distance traveled with the finger so far..
 					stripeSize = Math.floor(originalWidth / imgArr.length);
 					var newIndex = pic.data("currentIndex") + Math.floor(distance*options.sensibility/stripeSize)
-					if (newIndex < 0) 
+					if (newIndex < 0)
 					{
 						newIndex = imgArr.length-1;
 						pic.data("currentIndex",newIndex);
@@ -140,33 +151,47 @@ jQuery.fn.threesixty = function(options){
 					if (newIndex == pic.data("currentIndex"))
 						return;
 					pic.attr("src",imgArr[newIndex]);
-					pic.data("tempIndex",newIndex);		
+loadBack(newIndex);
+//tmp_360 = newIndex;
+//if (window.cur_360 == undefined) cur_360 = 0;
+//cur_360 += tmp_360;
+//if (cur_360 > 23) cur_360 -=23;
+					pic.data("tempIndex",newIndex);
 				}
 				else {	//The image needs to be moved in its viewport..
 					moveInViewport(e);
-				} 
+				}
 				return;
-			}	
+			}
 		})
-		
+
 		if (options.method == "click")
 		{  //Certain binding will be done if and only if the method is "click" instead of "mousemove"
 			pic.mousedown(function(e) {
-				e.preventDefault(); 
-				pic.data("enabled","1"); 	
-			});	
-	
+				e.preventDefault();
+				pic.data("enabled","1");
+			});
+
 			$("body").mouseup(function(e) {
 	 			e.preventDefault();
 	 			pic.data("enabled","0");
 				pic.data("currentIndex",pic.data("tempIndex"));
 			});
 		}
-		
+
 		if (options.method == "auto") {
 			var speed = options.autoscrollspeed;
 			var newIndex=0;
-			window.setInterval(function() { pic.attr("src", imgArr[++newIndex % imgArr.length])} , speed);
+			timer = window.setInterval(function() {
+				pic.attr("src", imgArr[newIndex % imgArr.length])
+loadBack(newIndex % imgArr.length);
+cur_360 = newIndex % imgArr.length;
+//tmp_360 = newIndex % imgArr.length;
+//if (window.cur_360 == undefined) cur_360 = 0;
+//cur_360 += tmp_360;
+//if (cur_360 > 23) cur_360 -=23;
+newIndex++;
+			} , speed);
 		}
-	});			
+	});
 };

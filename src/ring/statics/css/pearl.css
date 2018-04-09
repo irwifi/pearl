@@ -485,48 +485,6 @@ header .menu ul li a:hover {
   box-shadow: 0px 0px 20px #dddddd;
   padding: 45px 45px 50px 45px;
 }
-.build-your-own .build-content .photo {
-  float: left;
-  width: 440px;
-  border: 1px solid #e7e7e7;
-  text-align: center;
-  padding-bottom: 40px;
-  position: -webkit-sticky;
-  position: sticky;
-  top: 0;
-}
-.build-your-own .selectors a img,
-.build-your-own .build-content .photo .mz-thumb img {
-  margin-top: 5px;
-  box-shadow: none;
-  border: 1px solid #e7e7e7;
-}
-
-.build-your-own .build-content .photo a[data-zoom-id] img,
-.build-your-own .build-content .photo .mz-thumb img {
-  box-shadow: none;
-  border: 1px solid #e7e7e7;
-}
-.build-your-own .build-content .photo a[data-zoom-id] img:hover,
-.build-your-own .build-content .photo .mz-thumb img:hover {
-  filter: brightness(97%);
-}
-.build-your-own .build-content .photo .mz-thumb-selected.mz-thumb img {
-  border: 1px solid #e6c673;
-  filter: brightness(100%);
-}
-.photo .selectors {
-  margin-top: 440px;
-  position: relative;
-}
-.photo .selectors a.active img{
- border: 1px solid #e6c673;
-}
-
-
-.build-your-own .build-content .photo .selectors .mz-thumb {
-  margin: 0px 3px;
-}
 .build-your-own .build-content .options {
   float: right;
   width: 500px;
@@ -734,7 +692,8 @@ header .menu ul li a:hover {
 }
 .option-list a.item:hover {
   border: 1px solid #e6c673;
-  background: #fbfbfa;
+  /*background: #fbfbfa;*/
+  box-shadow: 0px 0px 5px 1px #d8c9a3;
 }
 .option-list a.item.selected {
   border: 1px solid #e6c673;
@@ -742,9 +701,25 @@ header .menu ul li a:hover {
 .option-list a.item.selected .check {
   display: block;
 }
+.option-list .ring_image {
+  position: relative;
+}
+
 .option-list a.item .image {
   margin: 0px 0px 0px 0px;
   max-height: 38px;
+}
+
+.option-list .ring_image .image {
+  margin: 0px 0px 0px 0px;
+  position: absolute;
+  max-height: 120px !important;
+}
+.option_ring_style  .image{
+   left: 50px;
+}
+.option_ring_substyle .image{
+  left: 10px;
 }
 .option-list a.item .label {
   display: block;
@@ -1030,12 +1005,4 @@ footer .copyright a {
   /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fbf7f3', endColorstr='#ece4db', GradientType=1);
   /* IE6-9 fallback on horizontal gradient */
-}
-
-.wrapper_pearl_color {
-  height: 100px;
-}
-.selectors img{
-    position: relative !important;
-    width: 90px !important;
 }

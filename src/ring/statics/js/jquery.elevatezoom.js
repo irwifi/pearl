@@ -33,6 +33,15 @@ if ( typeof Object.create !== 'function' ) {
 	};
 }
 
+function getUrlRing(){
+	var base = String($('.option_ring_substyle.selected').attr('data-ringbase'));
+	var position = $('.views .view-link.active').data('position');
+	var color = $('.option_ring_metal.selected').attr('data-metal');
+	if (typeof color == "undefined")  var color = 'W';
+	var url = 'statics/img/ring_base/' + base + '/' + position + '/' +color + '.png';
+	return url;
+}
+
 (function( $, window, document, undefined ) {
 	var ElevateZoom = {
 			init: function( options, elem ) {
@@ -108,7 +117,9 @@ if ( typeof Object.create !== 'function' ) {
 					self.options.onZoomedImageLoaded(self.$elem);
 				}
 				newImg.src = imgsrc; // this must be done AFTER setting onload
+
 				return;
+
 			},
 
 			startZoom: function( ) {
@@ -281,9 +292,9 @@ if ( typeof Object.create !== 'function' ) {
 				if(self.options.zoomType == "window") {
 
 					self.zoomWindow.css({ backgroundImage: "url('" + self.imageSrc + "')" });
-//if($('#page2').css('display')=='block'){
-//	self.zoomWindow.append('<img src="" class="zoom_ring_image">');
-//}
+if($('#page2').css('display')=='block'){
+	self.zoomWindow.append('<img src="" class="zoom_ring_image">');
+}
 				}
 				if(self.options.zoomType == "inner") {
 					self.zoomWindow.css({ backgroundImage: "url('" + self.imageSrc + "')" });
@@ -398,7 +409,7 @@ if ( typeof Object.create !== 'function' ) {
 				//  lensFadeOut: 500,  zoomTintFadeIn
 				self.zoomContainer.add(self.$elem).mouseenter(function(){
 
-//$('img', self.zoomWindow).attr('src', getUrlRing());
+					$('img', self.zoomWindow).attr('src', getUrlRing());
 
 					if(self.overWindow == false){self.setElements("show");}
 
@@ -1275,6 +1286,8 @@ if ( typeof Object.create !== 'function' ) {
 						}
 
 					}
+
+
 				}
 
 			},
