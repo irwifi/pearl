@@ -144,8 +144,10 @@ $( ( ) => {
 		} );
 
 		$( ".option_ring_substyle" ).on( "click", function( ) {
-			var ring_name = $( this ).attr( "data-ringbase" ).split( "." );
-			$( "#ring_base" ).attr( { "src": "statics/img/products/rings/layers/ring_base/" + ring_name[ 0 ] + "_" + $( ".wrapper_ring_metal" ).attr( "data-metal" ) + "." + ring_name[ 1 ] } ).removeClass( "hidden" );
+			var ring_name = $( this ).attr( "data-ringbase");
+			if ($( '#page1' ).hasClass( 'hidden' )) {
+				$( "#ring_base" ).attr( { "src": "statics/img/products/rings/layers/ring_base/" + ring_name + "/side/" + $( ".wrapper_ring_metal" ).attr( "data-metal" ) + ".png" } ).removeClass( "hidden" );
+			}
 			$( ".ring_price" ).text( $( this ).find( ".price_amount" ).text( ) );
 			$( ".wrapper_ring_substyle" ).attr( { "data-ringbase": $( this ).attr( "data-ringbase" ) } );
 			setImage( );
@@ -384,18 +386,20 @@ $( ( ) => {
 	}
 
 	function play360( ) {
-		var index = parseInt( $( '.front360' ).attr( 'src' ).substr( 0, 2 ), 10 );
+		var index = parseInt( $( '.front360' ).attr( 'src' ).replace('statics/img/products/rings/layers/ring_base/Design021/360/', '').substr( 0, 2 ), 10 );
+
 		$( '#main_image' ).prepend( '<img class="tmp_front_360">' );
 		$( '#main_image' ).prepend( '<img class="tmp_back_360">' );
 
 		var ring_base = $( '.option_ring_substyle.selected' ).attr( 'data-ringbase' );
-		$( '.tmp_back_360' ).attr( 'src', 'statics/img/products/rings/layers/pearl/360/' + ( index ) + '.png' );
+		$( '.tmp_back_360' ).attr( 'src', 'statics/img/products/rings/layers/pearl/360/' + index + '.png' );
 		$( '.tmp_front_360' ).attr( 'src', 'statics/img/products/rings/layers/ring_base/' + ring_base + '/360/' + ( index ) + '.png' );
 
 		$( '.front360' ).closest( 'div' ).remove( );
 		$( '#main_image' ).prepend( '<img class="front360">' );
 
-		var front360 = [ ], back360 = [ ];
+		var front360 = [ ];
+		var back360 = [ ];
 		for ( var x = 1; x <= 75; x++ ) {
 			front360.push( 'statics/img/products/rings/layers/ring_base/' + ring_base + '/360/' + x + ".png" );
 			back360.push( 'statics/img/products/rings/layers/pearl/360/' + x + '.png' );
@@ -412,20 +416,20 @@ $( ( ) => {
 	}
 
 	function pause360( ) {
-		var index = parseInt( $( '.front360' ).attr( 'src' ).substr( 0, 2 ), 10 );
+		var index = parseInt( $( '.front360' ).attr( 'src' ).replace('statics/img/products/rings/layers/ring_base/' + ring_base + '/360/', '').substr( 0, 2 ), 10 );
 		$( '#main_image' ).prepend( '<img class="tmp_front_360">' );
 		$( '#main_image' ).prepend( '<img class="tmp_back_360">' );
 
 		var ring_base = $( '.option_ring_substyle.selected' ).attr( 'data-ringbase' );
 		$( '.tmp_front_360' ).attr( 'src', 'statics/img/products/rings/layers/ring_base/' + ring_base + '/360/' + ( index ) + '.png' );
-		$( '.tmp_back_360' ).attr( 'src', 'statics/img/products/rings/layers/pearl/360/' + ( index ) + '.png' );
+		$( '.tmp_back_360' ).attr( 'src', 'statics/img/products/rings/layers/pearl/360/' + index + '.png' );
 
 
 		$( '.front360' ).closest( 'div' ).remove( );
 		$( '#main_image' ).prepend( '<img class="front360">' );
 
 		var front360 = [ ];
-		back360 = [ ];
+		var back360 = [ ];
 		for ( var x = 1; x <= 75; x++ ) {
 			front360.push( 'statics/img/products/rings/layers/ring_base/' + ring_base + '/360/' + x + ".png" );
 			back360.push( 'statics/img/products/rings/layers/pearl/360/' + x + '.png' );
@@ -470,3 +474,5 @@ $( ( ) => {
 		}, 10 );
 	}
 } );
+
+

@@ -68,7 +68,7 @@ parent.prepend('<img class="back360">');
 		//ask browser to load all images.. I know this could be better but is just a POC
 
 		$.each(options.images, function(index, record) {
-			var o =$("<img>").attr("src",record).load(function() {
+			var o =$("<img>").attr("src",record).on('load', function(){
 				if (index>pic.data("tempIndex"))
 				{
 					pic.data("tempIndex", index)

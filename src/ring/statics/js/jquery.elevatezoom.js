@@ -38,7 +38,7 @@ function getUrlRing(){
 	var position = $('.views .view-link.active').data('position');
 	var color = $('.option_ring_metal.selected').attr('data-metal');
 	if (typeof color == "undefined")  var color = 'W';
-	var url = 'statics/img/ring_base/' + base + '/' + position + '/' +color + '.png';
+	var url = 'statics/img/products/rings/layers/ring_base/' + base + '/' + position + '/' +color + '.png';
 	return url;
 }
 
