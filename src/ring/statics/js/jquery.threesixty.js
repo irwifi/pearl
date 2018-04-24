@@ -152,6 +152,10 @@ parent.prepend('<img class="back360">');
 						return;
 					pic.attr("src",imgArr[newIndex]);
 loadBack(newIndex);
+//tmp_360 = newIndex;
+//if (window.cur_360 == undefined) cur_360 = 0;
+//cur_360 += tmp_360;
+//if (cur_360 > 23) cur_360 -=23;
 					pic.data("tempIndex",newIndex);
 				}
 				else {	//The image needs to be moved in its viewport..
@@ -181,6 +185,11 @@ loadBack(newIndex);
 			timer = window.setInterval(function() {
 				pic.attr("src", imgArr[newIndex % imgArr.length])
 loadBack(newIndex % imgArr.length);
+cur_360 = newIndex % imgArr.length;
+//tmp_360 = newIndex % imgArr.length;
+//if (window.cur_360 == undefined) cur_360 = 0;
+//cur_360 += tmp_360;
+//if (cur_360 > 23) cur_360 -=23;
 newIndex++;
 			} , speed);
 		}

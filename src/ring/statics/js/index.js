@@ -281,13 +281,16 @@ $( ( ) => {
 			case 1:
 				$( ".step.first" ).addClass( "active" );
 				$( ".step.second" ).add( ".step.last" ).addClass( "inactive" );
+                                deactivateCombineImage();
 				break;
 			case 2:
 				$( ".step.second" ).addClass( "active" );
 				$( ".step.last" ).addClass( "inactive" );
+                                deactivateCombineImage();
 				break;
 			case 3:
 				$( ".step.last" ).addClass( "active" );
+                                combineImages();
 				break;
 			default:
 				break;
@@ -319,10 +322,10 @@ $( ( ) => {
 			bases[ 2 ] = 'statics/img/products/rings/layers/ring_base/' + ring_base + '/front/' + metal + '.png';
 			bases[ 3 ] = 'statics/img/products/rings/layers/ring_base/' + ring_base + '/top/' + metal + '.png';
 
-			pearls[ 0 ] = 'statics/img/products/rings/layers/pearl/side/' + pearl + '.jpg';
-			pearls[ 1 ] = 'statics/img/products/rings/layers/pearl/lay/' + pearl + '.jpg';
+			pearls[ 0 ] = 'statics/img/products/rings/layers/pearl/side/' + pearl + '.png';
+			pearls[ 1 ] = 'statics/img/products/rings/layers/pearl/lay/' + pearl + '.png';
 			pearls[ 2 ] = 'statics/img/products/rings/layers/pearl/front/' + pearl + '.png';
-			pearls[ 3 ] = 'statics/img/products/rings/layers/pearl/top/' + pearl + '.jpg';
+			pearls[ 3 ] = 'statics/img/products/rings/layers/pearl/top/' + pearl + '.png';
 
 			links = $( '#main_image .views a' );
 
@@ -473,6 +476,40 @@ $( ( ) => {
 			box.delay( 500 ).animate( { opacity: 1 }, 300 );
 		}, 10 );
 	}
+        
+        function deactivateCombineImage(){
+                            $('#pearl').show();
+                            $('#ring_base').show();                            
+                            $('#whole_image').addClass('hidden');
+        }
+        
+        
+            function combineImages() {
+            var root_url = '';
+                    var loaded = 0;
+//                    $('#canvas').show();
+                    var canvas = document.getElementById("canvas");
+                    image1 = new MarvinImage();
+                    image1.load(root_url + $('#pearl').attr('src'), imageLoaded);
+                    image2 = new MarvinImage();
+                    image2.load(root_url + $('#ring_base').attr('src'), imageLoaded);
+                    function imageLoaded() {
+                    if (++loaded == 2) {
+                    canvas.width = image1.getWidth();
+                            canvas.height = image1.getHeight();
+                            var image = new MarvinImage(image1.getWidth(), image1.getHeight());
+                            Marvin.combineByAlpha(image1, image2, image, 0, 0);
+                            image.draw(canvas);
+                            var final_img = canvas.toDataURL();
+//                            $('#canvas').hide();
+                            $('#pearl').hide();
+                            $('#ring_base').hide();
+                            $('#whole_image').attr('src', final_img);
+                            $('#whole_image').removeClass('hidden');
+                    }
+                    }
+
+            }
 } );
 
 
