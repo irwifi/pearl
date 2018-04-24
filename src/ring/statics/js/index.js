@@ -399,7 +399,7 @@ $( ( ) => {
 		$( '#main_image' ).prepend( '<img class="front360">' );
 
 		var front360 = [ ];
-		var back360 = [ ];
+		back360 = [ ];
 		for ( var x = 1; x <= 75; x++ ) {
 			front360.push( 'statics/img/products/rings/layers/ring_base/' + ring_base + '/360/' + x + ".png" );
 			back360.push( 'statics/img/products/rings/layers/pearl/360/' + x + '.png' );
@@ -429,7 +429,7 @@ $( ( ) => {
 		$( '#main_image' ).prepend( '<img class="front360">' );
 
 		var front360 = [ ];
-		var back360 = [ ];
+		back360 = [ ];
 		for ( var x = 1; x <= 75; x++ ) {
 			front360.push( 'statics/img/products/rings/layers/ring_base/' + ring_base + '/360/' + x + ".png" );
 			back360.push( 'statics/img/products/rings/layers/pearl/360/' + x + '.png' );
