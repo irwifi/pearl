@@ -1,6 +1,6 @@
 @media only screen and (max-width: 1240px) {
     .container {;
-        background: #0F0;
+        /* background: #0F0; */
         width: inherit;
         margin: 0 auto;
     }
@@ -109,7 +109,7 @@
 
 @media only screen and (max-width: 740px) {
     .container {
-        background: #F00;
+        /* background: #F00; */
     }
 
     .build-your-own .page-title h1 {
@@ -230,7 +230,7 @@
 
 @media only screen and (max-width: 540px) {
     .container {
-        background: #00F;
+        /* background: #00F; */
     }
 
     .build-your-own .build-content {
@@ -372,7 +372,7 @@
 
 @media only screen and (max-width: 340px){
     .container {
-        background: #F0F;
+        /* background: #F0F; */
     }
 
     .build-your-own .page-title h1 {
