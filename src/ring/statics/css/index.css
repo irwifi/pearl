@@ -31,21 +31,34 @@
 	}
 
 	.build-your-own .build-content #main_image {
-	  float: left;
+	  /* float: left; */
+	  float: none;
 	  width: 440px;
 	  border: 1px solid #e7e7e7;
 	  text-align: center;
 	  padding-bottom: 40px;
-	  position: -webkit-sticky;
-	  position: sticky;
-	  top: 0;
+	  /* position: -webkit-sticky; */
+	  /* position: sticky; */
+	  /* top: 0; */
+	}
+
+	.left_bar {
+		float: left;
+		width:  calc(100% - 550px);
+		position:  sticky;
+		top: 4px;
+		z-index: 10;
+		background:  white;
 	}
 
 	.views {
-		margin-top: 520px;
-		position: relative;
-		margin-left: -30px;
+		/* position: relative; */
+		/* margin-top: 520px; */
+		/* margin-left: -30px; */
+		display: none;
 		width: 500px;
+		margin:  0 auto;
+		margin-top: 10px;
 	}
 
 	.views a {
@@ -59,6 +72,7 @@
 
 	.views a img {
 		position: absolute;
+		width: 92px;
 		left: 0px;
 	}
 
@@ -209,7 +223,7 @@
 	}
 
 	.option_ring_substyle img.pearl {
-		left: 49px;
+		left: 50px;
 		top: 10px;
 		max-width: 40px;
 	}

@@ -12,7 +12,6 @@
 	<style id="mz-runtime-css" type="text/css"></style>
 	<style id="magiczoom-reset-css" type="text/css"></style>
 
-	<!-- <link href="statics/css/red.css" rel="stylesheet" type="text/css"> -->
 	<link href="statics/css/tooltip.css" rel="stylesheet" type="text/css">
 	<link href="statics/css/simplelightbox.min.css" rel="stylesheet" type="text/css">
 	<link href="statics/css/pearl.css" rel="stylesheet" type="text/css">
@@ -97,7 +96,7 @@
 					<span class="number">1</span>
 					<div class="name">
 						<span class="title">Customize Your Pearl</span>
-						<a class="page1_link">Edit your selection</a>
+						<a class="page1_link">Edit <span class="shorten">your selection</span></a>
 					</div>
 				</div>
 				<div class="separator active-left">
@@ -107,7 +106,7 @@
 					<span class="number">2</span>
 					<div class="name">
 						<span class="title">Customize Your Setting</span>
-						<a class="page2_link">Edit your selection</a>
+						<a class="page2_link">Edit <span class="shorten">your selection</span></a>
 					</div>
 				</div>
 				<div class="separator">
@@ -124,35 +123,39 @@
 				</div>
 			</div>
 
+
 			<div class="build-content">
-				<div class="main_image side" id="main_image">
-					<img class="front360">
-					<a class="lightBox-link" href="statics/img/white_bg.jpg">
-						<div class="wrap">
-							<img id="pearl" src="" class="hidden" data-zoom-image="" />
-							<img id="ring_base" src="" class="hidden" data-zoom-image="" />
-							<img id="whole_image" src="" class="hidden" />
-						</div>
-					</a>
+				<div class="left_bar">
+					<div class="main_image side" id="main_image">
+						<img class="front360">
+						<a class="lightBox-link" href="statics/img/white_bg.jpg">
+							<div class="wrap">
+								<img id="pearl" src="" class="hidden" data-zoom-image="" />
+								<img id="ring_base" src="" class="hidden" data-zoom-image="" />
+								<img id="whole_image" src="" class="hidden" />
+							</div>
+						</a>
+					</div>
+
 					<div class="views">
-						<a class="hidden view-link active side" href="#" data-position="side">
+						<a class="view-link active side" href="#" data-position="side">
 							<img class="pearl" src="statics/img/px.jpg" />
 							<img class="ring_base" src="statics/img/px.jpg" />
 						</a>
-						<a class="hidden view-link lay" href="#" data-position="lay">
+						<a class="view-link lay" href="#" data-position="lay">
 							<img class="pearl" src="statics/img/px.jpg" />
 							<img class="ring_base" src="statics/img/px.jpg" />
 						</a>
-						<a class="hidden view-link front" href="#" data-position="front">
+						<a class="view-link front" href="#" data-position="front">
 							<img class="pearl" src="statics/img/px.jpg" />
 							<img class="ring_base" src="statics/img/px.jpg" />
 						</a>
-						<a class="hidden view-link top" href="#" data-position="top">
+						<a class="view-link top" href="#" data-position="top">
 							<img class="pearl" src="statics/img/px.jpg" />
 							<img class="ring_base" src="statics/img/px.jpg" />
 						</a>
 						<span class="box-btn-360">
-							<a class="hidden view-link" href="#">
+							<a class="view-link" href="#">
 								<img src="statics/img/360.png" />
 							</a>
 							<div class="hidden btn-360-action-cover">
@@ -189,7 +192,7 @@
 						<a href="" class="question-tip tooltip tooltipstered">?</a>
 						<!-- <span class="selected">Praesent</span> --></span>
 					<div class="option-list hidden" id="colorsempty">please choose a pearl type first</div>
-					<div id="colors">
+					<div id="colors" class="option-list">
 						<div class="wrapper_pearl_color option-list four" data-image="BLK.png">
 							<a class="item item2 option_pearl_color sample hidden" data-name="" data-type="" data-image="">
 								<img src="statics/img/selected.png" class="check">
@@ -769,8 +772,8 @@
 			</div>
 		</div>
 	</div>
-    
-        <canvas style="display: none" id="canvas" width="450" height="297"></canvas>
+
+      <canvas style="display: none" id="canvas" width="450" height="297"></canvas>
 
 	<footer>
 		<div class="container">
@@ -910,7 +913,7 @@
 			</div>
 			<div class="copyright">
 				<a href="">Terms of Use</a>
-				<a href="">Privacy Policy</a>© 2017 The Pearl Company. All rights reserved.</div>
+				<a href="">Privacy Policy</a>Â© 2017 The Pearl Company. All rights reserved.</div>
 		</div>
 	</footer>
 

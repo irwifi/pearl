@@ -1,3 +1,4 @@
+// "use strict";
 $( ( ) => {
 	$( 'input' ).iCheck( {
 		checkboxClass: 'icheckbox_square-red',
@@ -48,14 +49,14 @@ $( ( ) => {
 			{ "name": "sub_level4", "type": "setting_big", "label": "Sub Leve 4", "image": "sub_style4.png", "ring_base": "Design056", "price": 280 }
 		],
 		"ring_metal": [
-			{"price": 310},
-			{"price": 320},
-			{"price": 330},
-			{"price": 340},
-			{"price": 350},
-			{"price": 360},
-			{"price": 370},
-			{"price": 380}
+			{ "price": 310 },
+			{ "price": 320 },
+			{ "price": 330 },
+			{ "price": 340 },
+			{ "price": 350 },
+			{ "price": 360 },
+			{ "price": 370 },
+			{ "price": 380 }
 		]
 	}
 
@@ -107,7 +108,7 @@ $( ( ) => {
 
 	function load_ring_color( ring_metal ) {
 		for ( var i = 0; i < 7; i++ ) {
-			$( ".option_ring_metal" ).eq(i).find( ".price_amount" ).text( ring_metal[i].price );
+			$( ".option_ring_metal" ).eq( i ).find( ".price_amount" ).text( ring_metal[ i ].price );
 		}
 	}
 
@@ -144,8 +145,8 @@ $( ( ) => {
 		} );
 
 		$( ".option_ring_substyle" ).on( "click", function( ) {
-			var ring_name = $( this ).attr( "data-ringbase");
-			if ($( '#page1' ).hasClass( 'hidden' )) {
+			var ring_name = $( this ).attr( "data-ringbase" );
+			if ( $( '#page1' ).hasClass( 'hidden' ) ) {
 				$( "#ring_base" ).attr( { "src": "statics/img/products/rings/layers/ring_base/" + ring_name + "/side/" + $( ".wrapper_ring_metal" ).attr( "data-metal" ) + ".png" } ).removeClass( "hidden" );
 			}
 			$( ".ring_price" ).text( $( this ).find( ".price_amount" ).text( ) );
@@ -177,11 +178,11 @@ $( ( ) => {
 				setImage( );
 				zoomReset( );
 				$( '.btn-360-action-cover' ).addClass( 'hidden' );
-				$("#main_image").removeClass('side');
-				$("#main_image").removeClass('lay');
-				$("#main_image").removeClass('front');
-				$("#main_image").removeClass('top');
-				$("#main_image").addClass($( this ).attr('data-position'));
+				$( "#main_image" ).removeClass( 'side' );
+				$( "#main_image" ).removeClass( 'lay' );
+				$( "#main_image" ).removeClass( 'front' );
+				$( "#main_image" ).removeClass( 'top' );
+				$( "#main_image" ).addClass( $( this ).attr( 'data-position' ) );
 			}
 		} );
 
@@ -213,10 +214,10 @@ $( ( ) => {
 	}
 	// });
 
-	load_lightbox();
-	load_step_events();
+	load_lightbox( );
+	load_step_events( );
 
-	function load_lightbox() {
+	function load_lightbox( ) {
 		$( '.lightBox-link' ).simpleLightbox( { showCounter: true, widthRatio: 0.98, heightRatio: 0.98, loop: false } );
 
 		$( '.lightBox-link' ).on( 'shown.simplelightbox', function( ) {
@@ -235,12 +236,9 @@ $( ( ) => {
 		} );
 	}
 
-	function load_step_events() {
+	function load_step_events( ) {
 		$( ".page1_link" ).on( "click", ( ) => {
-			if ( isHas360( ) ) switchOff360( );
 			toStep( 1 );
-			$( '.views a' ).addClass( 'hidden' );
-			$( ".zoomContainer .zoom_ring_image" ).addClass( 'hidden' );
 		} );
 
 		$( ".page2_link" ).on( "click", ( ) => {
@@ -263,13 +261,11 @@ $( ( ) => {
 		} );
 
 		$( "#page2_submit" ).on( "click", ( ) => {
-			if ( isHas360( ) ) switchOff360( );
 			toStep( 3 );
-			$( 'html, body' ).animate( { scrollTop: $( "#page3" ).offset( ).top }, 100 );
 		} );
 	}
 
-	function toStep( step ) { // step [number]
+	function toStep( step ) {
 		$( ".page" ).addClass( 'hidden' );
 		$( "#page" + step ).removeClass( 'hidden' );
 		$( ".separator" ).removeClass( 'active-left active-right' );
@@ -279,18 +275,25 @@ $( ( ) => {
 		$( ".build-steps .step" ).removeClass( 'active inactive' );
 		switch ( step ) {
 			case 1:
+				if ( isHas360( ) ) switchOff360( );
 				$( ".step.first" ).addClass( "active" );
 				$( ".step.second" ).add( ".step.last" ).addClass( "inactive" );
-                                deactivateCombineImage();
+				deactivateCombineImage( );
+				$( '.views a' ).addClass( 'hidden' );
+				$( ".zoomContainer .zoom_ring_image" ).addClass( 'hidden' );
 				break;
 			case 2:
 				$( ".step.second" ).addClass( "active" );
 				$( ".step.last" ).addClass( "inactive" );
-                                deactivateCombineImage();
+				deactivateCombineImage( );
+				$(".views").show();
 				break;
 			case 3:
+				if ( isHas360( ) ) switchOff360( );
 				$( ".step.last" ).addClass( "active" );
-                                combineImages();
+				combineImages( );
+				$( 'html, body' ).animate( { scrollTop: $( "#page3" ).offset( ).top }, 100 );
+				$(".views").hide();
 				break;
 			default:
 				break;
@@ -303,7 +306,7 @@ $( ( ) => {
 		var pearl_image = $( ".wrapper_pearl_color" ).attr( "data-image" );
 		$.each( $( '.option_ring_style:not(.sample) img.pearl, .option_ring_substyle:not(.sample) img.pearl' ), function( index, val ) {
 			$( val ).attr( "src", "statics/img/products/rings/options/pearl/color/" + pearl_image );
-		});
+		} );
 	}
 
 	function setImage( ) {
@@ -327,7 +330,7 @@ $( ( ) => {
 			pearls[ 2 ] = 'statics/img/products/rings/layers/pearl/front/' + pearl + '.png';
 			pearls[ 3 ] = 'statics/img/products/rings/layers/pearl/top/' + pearl + '.png';
 
-			links = $( '#main_image .views a' );
+			links = $( '.views a' );
 
 			for ( var i = 0; i < 4; i++ ) {
 				links.eq( i ).attr( 'href', bases[ i ] );
@@ -361,12 +364,31 @@ $( ( ) => {
 	function zoomReset( ) {
 		$( '.zoomContainer' ).remove( );
 		$( '#main_image #pearl' ).removeData( 'elevateZoom' );
-		$( '#main_image #pearl' ).elevateZoom( {
-			zoomWindowWidth: 565,
-			zoomWindowHeight: 565,
-			zoomWindowOffetx: 70,
-			zoomWindowOffety: -31
-		} );
+
+		if($(window).width() > 1240) {
+			$( '#main_image #pearl' ).elevateZoom({
+				zoomWindowWidth: 565,
+				zoomWindowHeight: 565,
+				zoomWindowOffetx: 70,
+				zoomWindowOffety: -31
+			});
+		} else {
+			if($(window).width() > 550) {
+				$( '#main_image #pearl' ).elevateZoom({
+					zoomWindowWidth: 550,
+					zoomWindowHeight: 540,
+					zoomWindowOffetx: -400,
+					zoomWindowOffety: -31
+				});
+			} else {
+				$( '#main_image #pearl' ).elevateZoom({
+					zoomWindowWidth: 320,
+					zoomWindowHeight: 320,
+					zoomWindowOffetx: -300,
+					zoomWindowOffety: 100
+				});
+			}
+		}
 	}
 
 	function isHas360( ) {
@@ -389,7 +411,7 @@ $( ( ) => {
 	}
 
 	function play360( ) {
-		var index = parseInt( $( '.front360' ).attr( 'src' ).replace('statics/img/products/rings/layers/ring_base/Design021/360/', '').substr( 0, 2 ), 10 );
+		var index = parseInt( $( '.front360' ).attr( 'src' ).replace( 'statics/img/products/rings/layers/ring_base/Design021/360/', '' ).substr( 0, 2 ), 10 );
 
 		$( '#main_image' ).prepend( '<img class="tmp_front_360">' );
 		$( '#main_image' ).prepend( '<img class="tmp_back_360">' );
@@ -419,7 +441,7 @@ $( ( ) => {
 	}
 
 	function pause360( ) {
-		var index = parseInt( $( '.front360' ).attr( 'src' ).replace('statics/img/products/rings/layers/ring_base/' + ring_base + '/360/', '').substr( 0, 2 ), 10 );
+		var index = parseInt( $( '.front360' ).attr( 'src' ).replace( 'statics/img/products/rings/layers/ring_base/' + ring_base + '/360/', '' ).substr( 0, 2 ), 10 );
 		$( '#main_image' ).prepend( '<img class="tmp_front_360">' );
 		$( '#main_image' ).prepend( '<img class="tmp_back_360">' );
 
@@ -457,7 +479,8 @@ $( ( ) => {
 		$( '#main_image .wrap' ).animate( { opacity: 0 }, 300 );
 
 		var ring_base = $( '.option_ring_substyle.selected' ).attr( 'data-ringbase' );
-		var front360 = [ ],	back360 = [ ];
+		var front360 = [ ],
+			back360 = [ ];
 		for ( var x = 1; x <= 75; x++ ) {
 			front360.push( 'statics/img/products/rings/layers/ring_base/' + ring_base + '/360/' + x + ".png" );
 			back360.push( 'statics/img/products/rings/layers/pearl/360/' + x + '.png' );
@@ -476,40 +499,37 @@ $( ( ) => {
 			box.delay( 500 ).animate( { opacity: 1 }, 300 );
 		}, 10 );
 	}
-        
-        function deactivateCombineImage(){
-                            $('#pearl').show();
-                            $('#ring_base').show();                            
-                            $('#whole_image').addClass('hidden');
-        }
-        
-        
-            function combineImages() {
-            var root_url = '';
-                    var loaded = 0;
-//                    $('#canvas').show();
-                    var canvas = document.getElementById("canvas");
-                    image1 = new MarvinImage();
-                    image1.load(root_url + $('#pearl').attr('src'), imageLoaded);
-                    image2 = new MarvinImage();
-                    image2.load(root_url + $('#ring_base').attr('src'), imageLoaded);
-                    function imageLoaded() {
-                    if (++loaded == 2) {
-                    canvas.width = image1.getWidth();
-                            canvas.height = image1.getHeight();
-                            var image = new MarvinImage(image1.getWidth(), image1.getHeight());
-                            Marvin.combineByAlpha(image1, image2, image, 0, 0);
-                            image.draw(canvas);
-                            var final_img = canvas.toDataURL();
-//                            $('#canvas').hide();
-                            $('#pearl').hide();
-                            $('#ring_base').hide();
-                            $('#whole_image').attr('src', final_img);
-                            $('#whole_image').removeClass('hidden');
-                    }
-                    }
 
-            }
+	function deactivateCombineImage( ) {
+		$( '#pearl' ).show( );
+		$( '#ring_base' ).show( );
+		$( '#whole_image' ).addClass( 'hidden' );
+	}
+
+	function combineImages( ) {
+		var root_url = '';
+		var loaded = 0;
+		var canvas = document.getElementById( "canvas" );
+
+		image1 = new MarvinImage( );
+		image1.load( root_url + $( '#pearl' ).attr( 'src' ), imageLoaded );
+		image2 = new MarvinImage( );
+		image2.load( root_url + $( '#ring_base' ).attr( 'src' ), imageLoaded );
+
+		function imageLoaded( ) {
+			if ( ++loaded == 2 ) {
+				canvas.width = image1.getWidth( );
+				canvas.height = image1.getHeight( );
+				var image = new MarvinImage( image1.getWidth( ), image1.getHeight( ) );
+				Marvin.combineByAlpha( image1, image2, image, 0, 0 );
+				image.draw( canvas );
+				var final_img = canvas.toDataURL( );
+
+				$( '#pearl' ).hide( );
+				$( '#ring_base' ).hide( );
+				$( '#whole_image' ).attr( 'src', final_img );
+				$( '#whole_image' ).removeClass( 'hidden' );
+			}
+		}
+	}
 } );
-
-
