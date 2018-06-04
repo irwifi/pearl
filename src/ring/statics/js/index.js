@@ -525,10 +525,13 @@ $( ( ) => {
 				image.draw( canvas );
 				var final_img = canvas.toDataURL( );
 
-				$( '#pearl' ).hide( );
+				$( '#pearl' ).hide();
 				$( '#ring_base' ).hide( );
 				$( '#whole_image' ).attr( 'src', final_img );
 				$( '#whole_image' ).removeClass( 'hidden' );
+				$.post('php/save_image.php', {img_data: final_img}).always(function(data) {
+					alert( data );
+				});
 			}
 		}
 	}
